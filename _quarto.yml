@@ -1,0 +1,49 @@
+project:
+  type: website
+  output-dir: docs
+
+render:
+  ignore:
+    - Dont-Sync-2024
+
+website:
+  title: "JHU EN.553.696"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: Introduction.html
+        text: Intro
+      # - href: Perceptron.html
+      #   text: Perceptron
+      # - href: Backpropagation.html
+      #   text: Backprop
+      # - href: Hopfield.html
+      #   text: Hopfield
+      # - href: Linear_Algebra.html
+      #   text: Linear Algebra
+      # - href: RNN.html
+      #   text: RNN
+      # - href: LIF.html
+      #   text: LIF
+      # - href: HH.html
+      #   text: HH
+      # - href: Exercise-in-GitHub.html
+      #   text: GitHub
+      # - href: Theta_Neuron.html
+      #   text: Theta
+      # - href: Gamma.html
+      #   text: Gamma
+      # - href: Beta.html
+      #   text: Beta
+      # - href: Gamma_Beta_Lab.html
+      #   text: Gamma+Beta
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

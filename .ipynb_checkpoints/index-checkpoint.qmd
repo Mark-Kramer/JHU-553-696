@@ -1,0 +1,96 @@
+---
+title: "JHU EN.553.696 (Fall 2026)"
+subtitle: "Methods in Computational Neuroscience"
+---
+
+
+
+# Introduction
+- Read the [syllabus](/Slides/EN-553-696-Syllabus.pdf)
+- Read [Chaing, *Catching crumbs from the table*, Nature, 2000](/Readings/Chiang_2000.pdf)
+- Read [Howlett, *OpenAI’s latest math break throughs commit research misconduct, experts say*, Sci Am, 2026](/Readings/Howlett_Scientific_American_2026.pdf)
+- Read [*Learning more about Claude's mathematical capabilities*](https://www.anthropic.com/research/riemann-zeta)
+- Lecture Slides: [Rhythms](/Slides/Rhythms_1.pdf), [Programming Habits](/Slides/Programming_Habits_2.pdf)
+- Code: [Intro to Python](Introduction.html)
+
+# Perceptron and Backpropagation
+- Read: [*Electronic Brain Teaches Itself*, NYT, 1958](/Readings/NYT_1958.pdf)
+- Read: [Rumelhart et al, *Learning representations by back-propagating errors*, Nature 1986](/Readings/Rumelhart_1986.pdf)
+- Lecture Slides: [Perceptrons](/Slides/Perceptron_1_and_2.pdf)
+- Lecture Slides: [Backpropagation](/Slides/Backpropagation.pdf)
+- Code:  [Training a Perceptron in Python](Perceptron.html)
+- Code:  [Backpropagation Example](Backpropagation.html)
+
+# Hopfield
+- Read: [Kleinfeld, *Nobel honors for John Hopfield*, Neuron, 2024](/Readings/Kleinfeld_2024.pdf)
+- Read: [Hopfield, *Neural networks and physical systems...*, PNAS, 1982](/Readings/Hopfield_1982.pdf)
+- Lecture Slides: [Hopfield Part 1](/Slides/Hopfield_Lecture_1.pdf), [Linear Algebra Part 1](/Slides/Linear_Algebra_1.pdf), [Hopfield Part 2](/Slides/Hopfield_Lecture_2.pdf)
+- Code: [Hopfield Examples](Hopfield.html)
+- Code: [Linear Algebra Examples](Linear_Algebra.html)
+
+<!-- # Recurrent Neural Networks
+- Read: [*The Next Frontier Is Inside Your Brain*, NYT, 2013](/Readings/Boffey_NYT_2013.pdf)
+- Read: [*Probing Brain’s Depth, Trying to Aid Memory*, NYT, 2014](/Readings/Carey_NYT_2014.pdf)
+- Read: [*Brace Yourself for the AI Tsunami*, WSJ, 2026](/Readings/Noonan_WSJ_2026.pdf)
+- Read: [*AI Isn’t Coming for Every White-Collar Job. At Least Not Yet*, NYT, 2026](/Readings/Metz_NYT_2026.pdf)
+- Lecture Slides: [RNN](/Slides/RNN_Lecture.pdf)
+- Lecture Slides: [Themes So Far](/Slides/Course_Themes.pdf)
+- Code: [RNN Examples](RNN.html)
+ 
+# Leaky Integrate \& Fire Neuron
+- Read: [Abbott, Brain Res Bull, 1999](/Readings/Abbott_1999.pdf)
+- Read: [Chapter 1, pages 5-12 @ C. Koch, Biophysics of computation, 1998](/Readings/Koch_Chapter_1.pdf)
+- Read: [*Learning How Little We Know About the Brain*, NYT, 2014](/Readings/Gorman_NYT_2014.pdf)
+- Read: [*Relax, the Terminator Is Far Away*, NYT, 2015](/Readings/Markoff_NYT_2015.pdf)
+- Read: [*Barbie Wants to Get to Know Your Child*, NYT, 2015](/Readings/Vlahos_NYT_2015.pdf)
+- Note Taker: [LIF](/Slides/LIF.pdf)
+- Code:  [LIF in Python](LIF.html)
+
+# Hodgkin-Huxley Neuron
+- Read: [Chapter 2, pages 25-42 @ E. Izhikevich, Dynamical Systems in Neuroscience, 2007.](/Readings/Izhikevich_Chapter_2.pdf)
+- Read: [Hodgkin-Huxley 1-page cheat sheet](/Readings/Hodgkin-Huxley_Cheat_Sheet.pdf)
+- Read: [*A Dying Young Woman’s Hope in Cryonics and a Future*, NYT, 2015](/Readings/Harmon_NYT_2015.pdf)
+- Read: [*The Race Is On to Control Artificial Intelligence, and Tech’s Future*, NYT, 2016](/Readings/Markoff_Lohr_NYT_2016.pdf)
+- Read: [*When Is the Singularity? Probably Not in Your Lifetime*, NYT, 2016](/Readings/Markoff_NYT_2016.pdf)
+- Lecture Slides: [HH](/Slides/HH_Lecture_1.pdf)
+- Code:  [Hodgkin-Huxley Neuron in Python](HH.html)
+
+# Projects
+- [Project Outline](/Slides/Project_Papers_and_Ideas.pdf)
+- Template Slides: [Check in Template PDF](/Slides/Project_Check_In_Template.pdf), [Check in Template PowerPoint](/Slides/Project_Check_In_Template.pptx)
+- **Grading Rubrics:** [Presentation](/Slides/NE593_Presentation_Rubric.pdf), [GitHub](/Slides/NE593_Github_Rubric.pdf)
+- Code: [GitHub Introduction](Exercise-in-GitHub.html)
+
+# Theta Neuron
+- Read: [Wikipedia](https://en.wikipedia.org/wiki/Theta_model) (for much more detail)
+- Read: [*The Great A.I. Awakening*, NYT, 2016](/Readings/Lewis-Kraus_NYT_2016.pdf)
+- Read: [Thwaites et al, *The difficult legacy of Turing’s wager*, J Comp Neuro, 2017](/Readings/Thwaites_2017.pdf)
+- Note Taker: [Theta Neuron](Slides/Theta_Neuron.pdf)
+- Code: [Theta Neuron](Theta_Neuron.html)
+
+# Gamma rhythms
+- Read: [Chapter 30 (PING) @ Borgers, An Introduction to Modeling Neuronal Dynamics, 2017](/Readings/Borgers_PING_2017.pdf)
+- Read: [Chapter 31 (ING) @ Borgers, An Introduction to Modeling Neuronal Dynamics, 2017](/Readings/Borgers_ING_2017.pdf)
+- Read: [*A Machine May Not Take Your Job, but One Could Become Your Boss*, NYT, 2019](/Readings/Roose_NYT_2019.pdf)
+- Read: [*AI Can Almost Write Like a Human—and More Advances Are Coming*, WSJ, 2020](/Readings/Council_WSJ_2020.pdf)
+- Lecture Slides: [Gamma Rhythms](/Slides/Gamma_Lecture.pdf)
+- Code: [Gamma Lab](Gamma.html)
+
+# Beta rhythms
+- Read: [Chapter 33 (Beta) @ Borgers, An Introduction to Modeling Neuronal Dynamics, 2017](/Readings/Borgers_Beta_2017.pdf)
+- Read: [*The False Promise of ChatGPT*, NYT, 2023](/Readings/Chomsky_NYT_2023.pdf)
+- Read: [*The A.I. Disruption We've Been Waiting for Has Arrived*, NYT, 2026](/Readings/Ford_NYT_2026.pdf)
+- Lecture Slides: [Beta Rhythms](Slides/Beta_Lecture.pdf)
+- Code: [Beta Lab](Beta.html)
+
+# Gamma + Beta rhythms
+- Lecture Slides: [Gamma Beta Rhythms](Slides/Gamma_Beta_Lecture.pdf)
+- Code: [Gamma Beta Lab](Gamma_Beta_Lab.html)
+
+- Read: [Kramer et al, *Golden rhythms as a theoretical framework...*, 2022](/Readings/Kramer_2022.pdf)
+- Read: [*Chips Off the Old Block: Computers Are Taking Design Cues From Human Brains*, NYT, 2017](/Readings/Metz_NYT_2017.pdf)
+- Read: [*Artificial Intelligence Hits the Barrier of Meaning*, NYT, 2018](/Readings/Mitchell_NYT_2018.pdf)
+- Read: [*‘The Beginning of a Wave’: A.I. Tiptoes Into the Workplace*, NYT, 2018](/Readings/Lohr_NYT_2018.pdf)
+- Lecture Slides [SHO](SHO.pdf)
+- Code:
+-->
