@@ -16,8 +16,8 @@ subtitle: "Methods in Computational Neuroscience"
 - Read: [*Electronic Brain Teaches Itself*, NYT, 1958](/Readings/NYT_1958.pdf)
 - Read: [Rumelhart et al, *Learning representations by back-propagating errors*, Nature 1986](/Readings/Rumelhart_1986.pdf)
 - Read: [Tao, *Mathematics in the age of AI*, arXiv, 2026](/Readings/Tao_2026.pdf)
-- Lecture Slides: [Perceptrons](/Slides/Perceptron_1_and_2.pdf)
-- Lecture Slides: [Backpropagation](/Slides/Backpropagation.pdf)
+- Lecture Slides: [Perceptrons](/Slides/3_Perceptron.pdf)
+- Lecture Slides: [Backpropagation](/Slides/4_Backpropagation.pdf)
 - Code:  [Training a Perceptron in Python](Perceptron.html)
 - Code:  [Backpropagation Example](Backpropagation.html)
 
