@@ -14,10 +14,10 @@ website:
         text: Home
       - href: Introduction.html
         text: Intro
-      # - href: Perceptron.html
-      #   text: Perceptron
-      # - href: Backpropagation.html
-      #   text: Backprop
+      - href: Perceptron.html
+        text: Perceptron
+      - href: Backpropagation.html
+        text: Backprop
       # - href: Hopfield.html
       #   text: Hopfield
       # - href: Linear_Algebra.html
