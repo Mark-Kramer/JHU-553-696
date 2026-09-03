@@ -12,6 +12,12 @@ subtitle: "Methods in Computational Neuroscience"
 - Lecture Slides: [Introduction and Rhythms](/Slides/1_Introduction_and_Rhythms.pdf), [Programming Habits](/Slides/2_Programming_Habits.pdf)
 - Code: [Intro to Python](https://mark-kramer.github.io/Case-Studies-Python/01.html)
 
+## Teams
+- [Rosters](/Slides/teams_1.txt)
+- Skill Demonstration [Rubric](/Slides/Skill_Demonstration_Rubric.pdf)
+- Skill Demonstration [Template TBD]()
+---
+
 # Perceptron and Backpropagation
 - Read: [*Electronic Brain Teaches Itself*, NYT, 1958](/Readings/NYT_1958.pdf)
 - Read: [Rumelhart et al, *Learning representations by back-propagating errors*, Nature 1986](/Readings/Rumelhart_1986.pdf)

@@ -46,7 +46,14 @@
     "href": "index.html",
     "title": "JHU EN.553.696 (Fall 2026)",
     "section": "",
-    "text": "Introduction\n\nRead the syllabus\nRead Best Practices for Using AI to Learn Mathematics\nRead Chaing, Catching crumbs from the table, Nature, 2000\nRead Howlett, OpenAI’s latest math break throughs commit research misconduct, experts say, Sci Am, 2026\nRead Learning more about Claude’s mathematical capabilities\nLecture Slides: Introduction and Rhythms, Programming Habits\nCode: Intro to Python\n\n\n\nPerceptron and Backpropagation\n\nRead: Electronic Brain Teaches Itself, NYT, 1958\nRead: Rumelhart et al, Learning representations by back-propagating errors, Nature 1986\nRead: Tao, Mathematics in the age of AI, arXiv, 2026\nLecture Slides: Perceptrons\nLecture Slides: Backpropagation\nCode: Training a Perceptron in Python\nCode: Backpropagation Example"
+    "text": "Read the syllabus\nRead Best Practices for Using AI to Learn Mathematics\nRead Chaing, Catching crumbs from the table, Nature, 2000\nRead Howlett, OpenAI’s latest math break throughs commit research misconduct, experts say, Sci Am, 2026\nRead Learning more about Claude’s mathematical capabilities\nLecture Slides: Introduction and Rhythms, Programming Habits\nCode: Intro to Python\n\n\n\n\nRosters\nSkill Demonstration Rubric\nSkill Demonstration Template TBD"
+  },
+  {
+    "objectID": "index.html#teams",
+    "href": "index.html#teams",
+    "title": "JHU EN.553.696 (Fall 2026)",
+    "section": "",
+    "text": "Rosters\nSkill Demonstration Rubric\nSkill Demonstration Template TBD"
   },
   {
     "objectID": "Backpropagation.html",
