@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Backpropagation – JHU EN.553.696</title>
+<title>Hopfield – JHU EN.553.696</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -228,7 +228,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"options":{"warning":"true","message":"true","results":"markup","out-height":"","autorun":"","read-only":"false","classes":"","context":"interactive","fig-width":7,"label":"","fig-cap":"","dpi":72,"out-width":"700px","fig-height":5,"comment":"","output":"true"},"id":1,"code":"import numpy as np\nimport matplotlib.pyplot as plt\nimport pandas as pd"},{"options":{"warning":"true","message":"true","results":"markup","out-height":"","autorun":"","read-only":"false","classes":"","context":"interactive","fig-width":7,"label":"","fig-cap":"","dpi":72,"out-width":"700px","fig-height":5,"comment":"","output":"true"},"id":2,"code":"df = pd.read_csv(\"https://raw.githubusercontent.com/Mark-Kramer/BU-MA665-MA666/master/Data/backpropagation_example_data.csv\")\n\n# Extract the variables from the loaded data\nin_true = np.array(df.iloc[:,0])  #Get the values associated with the first column of the dataframe\nout_true = np.array(df.iloc[:,1])  #Get the values associated with the second column of the dataframe"},{"options":{"warning":"true","message":"true","results":"markup","out-height":"","autorun":"","read-only":"false","classes":"","context":"interactive","fig-width":7,"label":"","fig-cap":"","dpi":72,"out-width":"700px","fig-height":5,"comment":"","output":"true"},"id":3,"code":"print(np.transpose([in_true, out_true]))"},{"options":{"warning":"true","message":"true","results":"markup","out-height":"","autorun":"","read-only":"false","classes":"","context":"interactive","fig-width":7,"label":"","fig-cap":"","dpi":72,"out-width":"700px","fig-height":5,"comment":"","output":"true"},"id":4,"code":"def sigmoid(x):\n    # ... # Define the sigmoid anonymous function.\n\ndef feedforward(w, s0):         # Define feedforward solution.\n    # ... x1 = activity of first neuron,\n    # ... s1 = output of first neuron,\n    # ... x2 = activity of second neuron,\n    # ... s2 = output of second neuron,\n    # ... out = output of neural network.\n    return out,s1,s2"},{"options":{"warning":"true","message":"true","results":"markup","out-height":"","autorun":"","read-only":"false","classes":"","context":"interactive","fig-width":7,"label":"","fig-cap":"","dpi":72,"out-width":"700px","fig-height":5,"comment":"","output":"true"},"id":5,"code":"w     = [0.5,0.5]                  # Choose initial values for the weights.\nalpha = 0.01                       # Set the learning constant.\n\nK = np.size(in_true);\nresults = np.zeros([K,3])          # Define a variable to hold the results of each iteration.    \n\nfor k in np.arange(K):\n    s0     = in_true[k]            # Define the input,\n    target = out_true[k]           # ... and the target output.\n    \n    #Calculate feedforward solution to get output.\n    \n    #Update the weights.\n    w0 = w[0]; w1 = w[1];\n    w[1] = \"SOMETHING\"\n    w[0] = \"SOMETHING\"\n    \n    # Save the results of this step. --------------------------------------\n    # Here we save the 3 weights, and the neural network output.\n    results[k,:] = [w[0],w[1],  out]\n\n# Plot the weights and error during training \nplt.clf()\nplt.plot(results[:,1], label='w1')\nplt.plot(results[:,0], label='w0')\nplt.plot(results[:,2]-target, label='error')\nplt.legend()                       #Include a legend,\nplt.xlabel('Iteration number');    #... and axis label.\n\n# Print the final weights\nprint(results[-1,0:2])"}];
+globalThis.qpyodideCellDetails = [{"options":{"results":"markup","output":"true","classes":"","message":"true","label":"","read-only":"false","context":"interactive","autorun":"","fig-width":7,"dpi":72,"comment":"","out-height":"","warning":"true","out-width":"700px","fig-height":5,"fig-cap":""},"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\n# Define V\nN = 20\nK = 200\nV = np.zeros([N,K])\n\n# Set initial values for V\nV[:,0] = np.random.choice([0, 1], size=(N,))  # Pattern \n\n# Define connectivity\nTij = np.random.rand(N,N)\n\n# Do the updates\nU_threshold = 0\nfor k in np.arange(K)-1:\n    \n    #... Get the neurons now, at time index k.\n    #\n    \n    #... Choose a random neuron.\n    #\n    \n    #... Compute input to that neuron.\n    #\n\n    # Determine if that neuron fires, or not, and update the neuron state at time index k+1.\n    #\n\n# Plot it\nf = plt.figure()\nplt.imshow(1-V, cmap='gray')\nf.set_size_inches((30,200))\nplt.xlabel('Time')\nplt.ylabel('Neuron Number');\nplt.show()","id":1},{"options":{"results":"markup","output":"true","classes":"","message":"true","label":"","read-only":"false","context":"interactive","autorun":"","fig-width":7,"dpi":72,"comment":"","out-height":"","warning":"true","out-width":"700px","fig-height":5,"fig-cap":""},"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\n# Define a pattern to save\nN   = 100\nxi  = \"SOMETHING (a random pattern)\"\nprint('xi = ',xi)\n\n# Define another pattern to save\nS   = \"SOMETHING (a random pattern)\"\nprint('S = ',S)\n\n# Compute the term in square brackets\nsquare_bracket_term = \"SOMETHING\"\nprint(square_bracket_term)","id":2},{"options":{"results":"markup","output":"true","classes":"","message":"true","label":"","read-only":"false","context":"interactive","autorun":"","fig-width":7,"dpi":72,"comment":"","out-height":"","warning":"true","out-width":"700px","fig-height":5,"fig-cap":""},"code":"K = 100;\nsquare_bracket_term = np.zeros(K)\nfor k in np.arange(K):\n    xi = \"SOMETHING (a random pattern)\"  # Random pattern\n    S  = \"SOMETHING (a random pattern)\"  # Another random pattern\n\n    square_bracket_term[k] = \"SOMETHING\"\n\nplt.figure()\nplt.hist(square_bracket_term)\nplt.axvline(x=N/2, color='red')\nplt.axvline(x=0, color='red', linestyle=':')\nplt.show()","id":3},{"options":{"results":"markup","output":"true","classes":"","message":"true","label":"","read-only":"false","context":"interactive","autorun":"","fig-width":7,"dpi":72,"comment":"","out-height":"","warning":"true","out-width":"700px","fig-height":5,"fig-cap":""},"code":"K = 100;\nsquare_bracket_term = np.zeros(K)\nfor k in np.arange(K):\n    xi = \"SOMETHING (a random pattern)\"  # Random pattern\n    S  = \"SOMETHING (nearby to xi)\"      # A nearby pattern\n\n    square_bracket_term[k] =  \"SOMETHING\"\n\nplt.figure()\nplt.hist(square_bracket_term)\nplt.axvline(x=N, color='red')\nplt.axvline(x=0, color='red', linestyle=':')\nplt.show()","id":4},{"options":{"results":"markup","output":"true","classes":"","message":"true","label":"","read-only":"false","context":"interactive","autorun":"","fig-width":7,"dpi":72,"comment":"","out-height":"","warning":"true","out-width":"700px","fig-height":5,"fig-cap":""},"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\n# Consider 100 neurons\nN    = 100\n\n# Define a pattern to remember\nxi1 = \"SOMETHING (e.g., a random pattern (1,N))\"\nprint('xi1', xi1)\nprint(np.shape(xi1))\n\n# Define another pattern to remember\nxi2 = \"SOMETHING (e.g., another random pattern (1,N))\"\nprint('xi2', xi2)\nprint(np.shape(xi1))\n\n# Compute Tij (make sure the diagonal is 0)\nTij = \"SOMETHING (HINT: use matrix multiplication ...)\nplt.imshow(Tij); plt.colorbar();\n\n# Send in state S that is nearby to xi1 (e.g., 3/4 of xi1, 1/4 of xi2)\nS = \"SOMETHING (HINT: consider np.concatenate(...))\nprint('S', S)\nprint(np.shape(S))\n\n# Plot the S and xi1\nplt.figure()\nplt.subplot(4,1,1)\nplt.stem(S.T); plt.title('S original')\n\nplt.subplot(4,1,2)\nplt.stem(xi1.T); plt.title(\"xi1 stored state\")\n\n# Update state S in time\nK = 1000\nU_threshold = 0\nerror = np.zeros(K);\nfor k in np.arange(K):\n    # Choose a random neuron\n    random_neuron = \"SOMETHING\"\n    \n    # Compute input to that neuron\n    #\n\n    # Compute the error (i.e., the difference between S and xi1)\n    error[k] = \"SOMETHING\"\n\nplt.subplot(4,1,3)\nplt.stem(S.T, 'r'); plt.title('S final')\n\nplt.subplot(4,1,4)\nplt.plot(error)\nplt.axhline(0, color='k', linestyle='--')\nplt.ylabel('Error')\n\nplt.tight_layout()\nplt.show()","id":5}];
 
 
 </script>
@@ -482,11 +482,11 @@ window.Quarto = {
 <span class="menu-text">Perceptron</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./Backpropagation.html" aria-current="page"> 
+    <a class="nav-link" href="./Backpropagation.html"> 
 <span class="menu-text">Backprop</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Hopfield.html"> 
+    <a class="nav-link active" href="./Hopfield.html" aria-current="page"> 
 <span class="menu-text">Hopfield</span></a>
   </li>  
   <li class="nav-item">
@@ -509,10 +509,9 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#steps-to-backpropagation" id="toc-steps-to-backpropagation" class="nav-link active" data-scroll-target="#steps-to-backpropagation">Steps to backpropagation</a></li>
-  <li><a href="#load-example-data" id="toc-load-example-data" class="nav-link" data-scroll-target="#load-example-data">Load example data</a></li>
-  <li><a href="#for-training-first-define-two-useful-functions" id="toc-for-training-first-define-two-useful-functions" class="nav-link" data-scroll-target="#for-training-first-define-two-useful-functions">For training, first define two useful functions:</a></li>
-  <li><a href="#now-train-the-neural-network-with-these-in_true-out_true-data." id="toc-now-train-the-neural-network-with-these-in_true-out_true-data." class="nav-link" data-scroll-target="#now-train-the-neural-network-with-these-in_true-out_true-data.">Now, train the neural network with these (<code>in_true</code>, <code>out_true</code>) data.</a></li>
+  <li><a href="#simulate-hopfield-network" id="toc-simulate-hopfield-network" class="nav-link active" data-scroll-target="#simulate-hopfield-network">1. Simulate Hopfield network</a></li>
+  <li><a href="#pseudoorthogonality" id="toc-pseudoorthogonality" class="nav-link" data-scroll-target="#pseudoorthogonality">2. Pseudoorthogonality</a></li>
+  <li><a href="#find-the-pattern" id="toc-find-the-pattern" class="nav-link" data-scroll-target="#find-the-pattern">3. Find the pattern</a></li>
   <li><a href="#challenges" id="toc-challenges" class="nav-link" data-scroll-target="#challenges">Challenges</a></li>
   </ul>
 </nav>
@@ -532,7 +531,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Backpropagation</h1>
+<h1 class="title">Hopfield</h1>
 </div>
 
 
@@ -549,53 +548,34 @@ window.Quarto = {
 </header>
 
 
-<p>In this notebook, we’ll implement a quick representation of the backpropagation algorithm for the simple two node network.</p>
+<section id="simulate-hopfield-network" class="level1">
+<h1>1. Simulate Hopfield network</h1>
 <div id="qpyodide-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<section id="steps-to-backpropagation" class="level1">
-<h1>Steps to backpropagation</h1>
-<p>We outlined 4 steps to perform backpropagation,</p>
-<ol type="1">
-<li>Choose random initial weights.</li>
-<li>Train the neural network on given input and output data.</li>
-<li>Update the weights.</li>
-<li>Repeat steps 2 &amp; 3 many times.</li>
-</ol>
-<p>Let’s now implement these steps in an example data set.</p>
 </section>
-<section id="load-example-data" class="level1">
-<h1>Load example data</h1>
-<p>The training data is <a href="./Data/backpropagation_example_data.csv">backpropagation_example_data.csv</a>. Get these data, and load them:</p>
+<section id="pseudoorthogonality" class="level1">
+<h1>2. Pseudoorthogonality</h1>
+<p>Here, we’ll use the notation from <a href="10.1016/j.neuron.2024.11.002">Kleinfeld 2024</a>.</p>
+<p>Consider two random patterns, <span class="math inline">\(\xi\)</span> and <span class="math inline">\(S\)</span>, multiply them, and sum.</p>
 <div id="qpyodide-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Here we acquire two variables:</p>
-<p><code>in_true</code>: the true input to the hidden two-node neural network</p>
-<p><code>out_true</code>: the true output of the hidden two-node neural network</p>
-<p>The two-node neural network is hidden because we don’t know the weights (<code>w[0]</code> and <code>w[1]</code>).</p>
-<p>Instead, we only observe the pairs of inputs and outputs to this hidden neural network.</p>
-<p>Let’s look at some of these data:</p>
+<p>Repeat the product of <span class="math inline">\(\xi\)</span> and <span class="math inline">\(S\)</span>, <strong>both random</strong>, <code>K</code> times.</p>
 <div id="qpyodide-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>These data were created by sending the inputs (<code>in_true</code>, the first column above) into a two-node neural network to produce the outputs (<code>out_true</code>, the second column above).</p>
-<p>Again, we do not know the weights of this network … that’s what we’d like to find.</p>
-<p>To do so, we’ll use these data to train a neural network through back propagation.</p>
-</section>
-<section id="for-training-first-define-two-useful-functions" class="level1">
-<h1>For training, first define two useful functions:</h1>
+<p>Repeat the product of <span class="math inline">\(\xi\)</span> and <span class="math inline">\(S\)</span>, <strong>where <span class="math inline">\(S\)</span> is similar to <span class="math inline">\(\xi\)</span></strong>, <code>K</code> times.</p>
 <div id="qpyodide-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-<section id="now-train-the-neural-network-with-these-in_true-out_true-data." class="level1">
-<h1>Now, train the neural network with these (<code>in_true</code>, <code>out_true</code>) data.</h1>
+<section id="find-the-pattern" class="level1">
+<h1>3. Find the pattern</h1>
 <div id="qpyodide-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="challenges" class="level1">
 <h1>Challenges</h1>
 <ol type="1">
-<li>Use the chain rule to compute <span class="math inline">\(\dfrac{dC}{dw_0}\)</span>.</li>
-<li>Complete the code above to determine the weights (<code>w[0]</code> and <code>w[1]</code>) of the hidden two-node neural network.</li>
-<li>We’ve implemented a 2-node network; there’s an input node and an output node. Implement a <strong>3-node</strong> network and train it using backpropagation.</li>
+<li>Please look at Figure 1A and 1B in the reading (<a href="./Readings/Kleinfeld_2024.pdf">Kleinfeld, <em>Nobel honors for John Hopfield</em>, Neuron, 2024</a>). Figure 1A and 1B are the motivation for this problem, where the goal is to simulate something like it. To do so, first create a two-dimensional image of your choosing. Give each pixel in your image the value 0 or 1 (i.e., so it’s a black and white image). Then, store this image in the Hopfield network (by setting <span class="math inline">\(T_{ij}\)</span>). Show that, if you start with an image near your stored two-dimensional image, then as the dynamics evolve in the Hopfield model, the pattern approaches the stored image.</li>
+<li>We did not talk about the energy function for the Hopfield model in class. Please look at Figure 1C in the reading (<a href="./Readings/Kleinfeld_2024.pdf">Kleinfeld, <em>Nobel honors for John Hopfield</em>, Neuron, 2024</a>). Figure 1C is the motivation for this problem. Update your result from Problem 1 to include the energy function. See page 3821 of the article for the equation. Plot the energy as a function of the update number (as in Figure 1C). Show that the energy decreases as the initial pattern approaches the stored pattern.</li>
 </ol>
 
 
