@@ -36,7 +36,7 @@ Pinto, Alexandria	apinto5@jh.edu
 
 Team 7
 Gupta, Kartik Raj	kgupta22@jh.edu
-Huang, Simin	shuan159@jh.edu
+*Huang, Simin	shuan159@jh.edu
 Nunes, Martin Jose	mnunes4@jh.edu
 Jing, Jerry Shang	jjing3@jh.edu
 
@@ -44,6 +44,8 @@ Team 8
 Na, Risha	rna1@jh.edu
 Kroumov, Ivan-Alexander B	ikroumo1@jh.edu
 Chen, Bohan	bchen130@jh.edu
+Ramos-Vazquez, Aryana	aramosv2@jh.edu
+
 
 Team 9
 Lu, Victor Walfrid	wlu33@jh.edu
