@@ -21,6 +21,13 @@
     "text": "1. Simulate Hopfield network\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2. Pseudoorthogonality\nHere, we’ll use the notation from Kleinfeld 2024.\nConsider two random patterns, \\(\\xi\\) and \\(S\\), multiply them, and sum.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nRepeat the product of \\(\\xi\\) and \\(S\\), both random, K times.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nRepeat the product of \\(\\xi\\) and \\(S\\), where \\(S\\) is similar to \\(\\xi\\), K times.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n3. Find the pattern\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nChallenges\n\nPlease look at Figure 1A and 1B in the reading (Kleinfeld, Nobel honors for John Hopfield, Neuron, 2024). Figure 1A and 1B are the motivation for this problem, where the goal is to simulate something like it. To do so, first create a two-dimensional image of your choosing. Give each pixel in your image the value 0 or 1 (i.e., so it’s a black and white image). Then, store this image in the Hopfield network (by setting \\(T_{ij}\\)). Show that, if you start with an image near your stored two-dimensional image, then as the dynamics evolve in the Hopfield model, the pattern approaches the stored image.\nWe did not talk about the energy function for the Hopfield model in class. Please look at Figure 1C in the reading (Kleinfeld, Nobel honors for John Hopfield, Neuron, 2024). Figure 1C is the motivation for this problem. Update your result from Problem 1 to include the energy function. See page 3821 of the article for the equation. Plot the energy as a function of the update number (as in Figure 1C). Show that the energy decreases as the initial pattern approaches the stored pattern."
   },
   {
+    "objectID": "Untitled1.html",
+    "href": "Untitled1.html",
+    "title": "JHU EN.553.696",
+    "section": "",
+    "text": "def sigmoid(x):\n    S = 1 / (1+np.exp(-x)) # Define the sigmoid anonymous function.\n    return S\n\ndef feedforward(w, s0):         # Define feedforward solution.\n    x1 = s0*w[0]        # ... x1 = activity of first neuron,\n    s1 = sigmoid(x1)    # ... s1 = output of first neuron,\n    x2 = s1*w[1]        # ... x2 = activity of second neuron,\n    s2 = sigmoid(x2)    # ... s2 = output of second neuron,\n    out = s2            # ... out = output of neural network.\n    return out,s1,s2"
+  },
+  {
     "objectID": "Untitled.html",
     "href": "Untitled.html",
     "title": "JHU EN.553.696",

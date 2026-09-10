@@ -35,6 +35,7 @@ Pinto, Alexandria	apinto5@jh.edu
 Team 7
 Nunes, Martin Jose	mnunes4@jh.edu
 Jing, Jerry Shang	jjing3@jh.edu
+Smith, Garrett		gsmit149@jh.edu
 
 Team 8
 Na, Risha	rna1@jh.edu
@@ -46,4 +47,4 @@ Team 9
 Lu, Victor Walfrid	wlu33@jh.edu
 Wang, Yilin	ywan1114@jh.edu
 Zhao, Zuo-Han	zzuohan1@jh.edu
-
+Linxo, Cao	lcao25@jh.edu
