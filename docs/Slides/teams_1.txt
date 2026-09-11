@@ -10,9 +10,9 @@ Bangera, Shreya Chetankumar	sbanger2@jh.edu
 Varillas, Armelle	avarill1@jh.edu
 
 Team 3
-Chen, Wenrui	wchen196@jh.edu
+Chen, Wenrui		wchen196@jh.edu
 Liu, Chengweiran	cliu268@jh.edu
-Fang, Xianchen	xfang31@jh.edu
+Fang, Xianchen		xfang31@jh.edu
 
 Team 4
 Jiang, Jiayi	jjiang75@jh.edu
