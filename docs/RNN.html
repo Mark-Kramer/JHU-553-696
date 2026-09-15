@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>JHU EN.553.696 (Fall 2026) – JHU EN.553.696</title>
+<title>1. Simulate the activity of a simple RNN. – JHU EN.553.696</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -67,6 +101,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -89,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -113,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Linear Algebra</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./RNN.html"> 
+    <a class="nav-link active" href="./RNN.html" aria-current="page"> 
 <span class="menu-text">RNN</span></a>
   </li>  
 </ul>
@@ -132,13 +195,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
-  <ul class="collapse">
-  <li><a href="#teams" id="toc-teams" class="nav-link" data-scroll-target="#teams">Teams</a></li>
-  </ul></li>
-  <li><a href="#perceptron-and-backpropagation" id="toc-perceptron-and-backpropagation" class="nav-link" data-scroll-target="#perceptron-and-backpropagation">Perceptron and Backpropagation</a></li>
-  <li><a href="#hopfield" id="toc-hopfield" class="nav-link" data-scroll-target="#hopfield">Hopfield</a></li>
-  <li><a href="#recurrent-neural-networks" id="toc-recurrent-neural-networks" class="nav-link" data-scroll-target="#recurrent-neural-networks">Recurrent Neural Networks</a></li>
+  <li><a href="#simulate-the-activity-of-a-feedforward-network." id="toc-simulate-the-activity-of-a-feedforward-network." class="nav-link active" data-scroll-target="#simulate-the-activity-of-a-feedforward-network.">2. Simulate the activity of a feedforward network.</a></li>
+  <li><a href="#simulate-an-rnn." id="toc-simulate-an-rnn." class="nav-link" data-scroll-target="#simulate-an-rnn.">3. Simulate an RNN.</a></li>
+  <li><a href="#challenges" id="toc-challenges" class="nav-link" data-scroll-target="#challenges">Challenges</a></li>
   </ul>
 </nav>
     </div>
@@ -147,8 +206,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">JHU EN.553.696 (Fall 2026)</h1>
-<p class="subtitle lead">Methods in Computational Neuroscience</p>
+<h1 class="title">1. Simulate the activity of a simple RNN.</h1>
 </div>
 
 
@@ -165,115 +223,92 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<ul>
-<li>Read the <a href="./Slides/EN-553-696-Syllabus.pdf">syllabus</a></li>
-<li>Read <a href="./Readings/AMS_2026.pdf"><em>Best Practices for Using AI to Learn Mathematics</em></a></li>
-<li>Read <a href="./Readings/Chiang_2000.pdf">Chaing, <em>Catching crumbs from the table</em>, Nature, 2000</a></li>
-<li>Read <a href="./Readings/Howlett_Scientific_American_2026.pdf">Howlett, <em>OpenAI’s latest math break throughs commit research misconduct, experts say</em>, Sci Am, 2026</a></li>
-<li>Read <a href="https://www.anthropic.com/research/riemann-zeta"><em>Learning more about Claude’s mathematical capabilities</em></a></li>
-<li>Lecture Slides: <a href="./Slides/1_Introduction_and_Rhythms.pdf">Introduction and Rhythms</a>, <a href="./Slides/2_Programming_Habits.pdf">Programming Habits</a></li>
-<li>Code: <a href="https://mark-kramer.github.io/Case-Studies-Python/01.html">Intro to Python</a></li>
-</ul>
-<section id="teams" class="level2">
-<h2 class="anchored" data-anchor-id="teams">Teams</h2>
-<ul>
-<li><a href="./Slides/teams_1.txt">Rosters</a></li>
-<li>Skill Demonstration <a href="./Slides/Skill_Demonstration_Rubric.pdf">Rubric</a></li>
-<li>Skill Demonstration <a href="">Template TBD</a></li>
-</ul>
+<div id="51b12d52-8ca8-4edc-a706-1f40f9cb7351" class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define h</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> np.zeros([K])</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Set initial values for h</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>h[<span class="dv">0</span>] <span class="op">=</span> <span class="st">"SOMETHING"</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Define recurrent connection</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>w    <span class="op">=</span> <span class="st">"SOMETHING"</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate the model</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> np.arange(K<span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute the activity at the next step.</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">"SOMETHING"</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> plt.figure()</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>plt.plot(h)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Time'</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'activity'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<section id="simulate-the-activity-of-a-feedforward-network." class="level1">
+<h1>2. Simulate the activity of a feedforward network.</h1>
+<p>The network has 3 inputs (<span class="math inline">\(I\)</span> = [1,3,-3]), 3 hidden nodes, and 3 outputs.</p>
+<p>Set all bias = 0.</p>
+<div id="8f46b662-fc8c-4a3d-ac21-b612c727fa96" class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">"SOMETHING"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <hr>
 </section>
-</section>
-<section id="perceptron-and-backpropagation" class="level1">
-<h1>Perceptron and Backpropagation</h1>
+<section id="simulate-an-rnn." class="level1">
+<h1>3. Simulate an RNN.</h1>
 <ul>
-<li>Read: <a href="./Readings/NYT_1958.pdf"><em>Electronic Brain Teaches Itself</em>, NYT, 1958</a></li>
-<li>Read: <a href="./Readings/Rumelhart_1986.pdf">Rumelhart et al, <em>Learning representations by back-propagating errors</em>, Nature 1986</a></li>
-<li>Read: <a href="./Readings/Tao_2026.pdf">Tao, <em>Mathematics in the age of AI</em>, arXiv, 2026</a></li>
-<li>Lecture Slides: <a href="./Slides/3_Perceptron.pdf">Perceptrons</a></li>
-<li>Lecture Slides: <a href="./Slides/4_Backpropagation.pdf">Backpropagation</a></li>
-<li>Code: <a href="Perceptron.html">Training a Perceptron in Python</a></li>
-<li>Code: <a href="Backpropagation.html">Backpropagation Example</a></li>
+<li>Consider 1 input, 1 hidden neuron, and 1 output.</li>
+<li>Make <span class="math inline">\(I_t\)</span> random noise.</li>
+<li>Use a sigmoid activation function.</li>
+<li>Set bias = 0.</li>
+<li>Set <span class="math inline">\(W_{ih} = 1\)</span>, <span class="math inline">\(W_{ho} = 1\)</span>, and choose something for <span class="math inline">\(W_{hh}\)</span>.</li>
 </ul>
+<div id="d7fdc99f-ce52-44f0-9082-1ec19b4fbc14" class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sigmoid(x):</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    S <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span><span class="op">+</span>np.exp(<span class="op">-</span>x))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> S</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>K  <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>It <span class="op">=</span> np.random.randn(K)<span class="op">;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>ht <span class="op">=</span> np.zeros([K,<span class="dv">1</span>])</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>ot <span class="op">=</span> np.zeros([K,<span class="dv">1</span>])</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial state</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>ht[<span class="dv">0</span>] <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>ot[<span class="dv">0</span>] <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Set parameters</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>Wih <span class="op">=</span> <span class="co"># SOMETHING</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>Whh <span class="op">=</span> <span class="co"># SOMETHING</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>Who <span class="op">=</span> <span class="co"># SOMETHING</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Update h and o at each time.</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> np.arange(<span class="dv">1</span>,K<span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    ht[k] <span class="op">=</span> <span class="co"># SOMETHING</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    H     <span class="op">=</span> <span class="co"># SOMETHING</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    ot[k] <span class="op">=</span> <span class="co"># SOMETHING</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    O     <span class="op">=</span> <span class="co"># SOMETHING</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>plt.plot(It, <span class="st">'b'</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>plt.plot(ht, <span class="st">'k'</span>)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>plt.plot(ot, <span class="st">'r'</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>plt.legend([<span class="st">'It'</span>, <span class="st">'ht'</span>, <span class="st">'ot'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="hopfield" class="level1">
-<h1>Hopfield</h1>
-<ul>
-<li>Read: <a href="./Readings/Kleinfeld_2024.pdf">Kleinfeld, <em>Nobel honors for John Hopfield</em>, Neuron, 2024</a></li>
-<li>Read: <a href="./Readings/Hopfield_1982.pdf">Hopfield, <em>Neural networks and physical systems…</em>, PNAS, 1982</a></li>
-<li>Lecture Slides: <a href="./Slides/Hopfield_Lecture_1.pdf">Hopfield Part 1</a>, <a href="./Slides/Linear_Algebra.pdf">Linear Algebra</a>, <a href="./Slides/Hopfield_Lecture_2.pdf">Hopfield Part 2</a></li>
-<li>Code: <a href="Hopfield.html">Hopfield Examples</a></li>
-<li>Code: <a href="Linear_Algebra.html">Linear Algebra Examples</a></li>
-</ul>
-</section>
-<section id="recurrent-neural-networks" class="level1">
-<h1>Recurrent Neural Networks</h1>
-<ul>
-<li>Read: <a href="./Readings/Noonan_WSJ_2026.pdf"><em>Pause AI for Humanity’s Sake</em>, WSJ, 2026</a></li>
-<li>Read: <a href="./Readings/Berg_WSJ_2026.pdf"><em>We Need a Science of the AI Mind</em>, WSJ, 2026</a></li>
-<li>Read: <a href="https://journals.aps.org/prresearch/abstract/10.1103/phlp-rhny">Kramer, <em>Brain-inspired, interpretable, resonant recurrent neural networks</em>, PRR, 2026</a></li>
-<li>Lecture Slides: <a href="./Slides/RNN_Lecture.pdf">RNN</a></li>
-<li>Code: <a href="RNN.html">RNN Examples</a></li>
-</ul>
-<!-- # Leaky Integrate \& Fire Neuron
-- Read: [Abbott, Brain Res Bull, 1999](/Readings/Abbott_1999.pdf)
-- Read: [Chapter 1, pages 5-12 @ C. Koch, Biophysics of computation, 1998](/Readings/Koch_Chapter_1.pdf)
-- Read: [*Learning How Little We Know About the Brain*, NYT, 2014](/Readings/Gorman_NYT_2014.pdf)
-- Read: [*Relax, the Terminator Is Far Away*, NYT, 2015](/Readings/Markoff_NYT_2015.pdf)
-- Read: [*Barbie Wants to Get to Know Your Child*, NYT, 2015](/Readings/Vlahos_NYT_2015.pdf)
-- Note Taker: [LIF](/Slides/LIF.pdf)
-- Code:  [LIF in Python](LIF.html)
-
-# Hodgkin-Huxley Neuron
-- Read: [Chapter 2, pages 25-42 @ E. Izhikevich, Dynamical Systems in Neuroscience, 2007.](/Readings/Izhikevich_Chapter_2.pdf)
-- Read: [Hodgkin-Huxley 1-page cheat sheet](/Readings/Hodgkin-Huxley_Cheat_Sheet.pdf)
-- Read: [*A Dying Young Woman’s Hope in Cryonics and a Future*, NYT, 2015](/Readings/Harmon_NYT_2015.pdf)
-- Read: [*The Race Is On to Control Artificial Intelligence, and Tech’s Future*, NYT, 2016](/Readings/Markoff_Lohr_NYT_2016.pdf)
-- Read: [*When Is the Singularity? Probably Not in Your Lifetime*, NYT, 2016](/Readings/Markoff_NYT_2016.pdf)
-- Lecture Slides: [HH](/Slides/HH_Lecture_1.pdf)
-- Code:  [Hodgkin-Huxley Neuron in Python](HH.html)
-
-# Projects
-- [Project Outline](/Slides/Project_Papers_and_Ideas.pdf)
-- Template Slides: [Check in Template PDF](/Slides/Project_Check_In_Template.pdf), [Check in Template PowerPoint](/Slides/Project_Check_In_Template.pptx)
-- **Grading Rubrics:** [Presentation](/Slides/NE593_Presentation_Rubric.pdf), [GitHub](/Slides/NE593_Github_Rubric.pdf)
-- Code: [GitHub Introduction](Exercise-in-GitHub.html)
-
-# Theta Neuron
-- Read: [Wikipedia](https://en.wikipedia.org/wiki/Theta_model) (for much more detail)
-- Read: [*The Great A.I. Awakening*, NYT, 2016](/Readings/Lewis-Kraus_NYT_2016.pdf)
-- Read: [Thwaites et al, *The difficult legacy of Turing’s wager*, J Comp Neuro, 2017](/Readings/Thwaites_2017.pdf)
-- Note Taker: [Theta Neuron](Slides/Theta_Neuron.pdf)
-- Code: [Theta Neuron](Theta_Neuron.html)
-
-# Gamma rhythms
-- Read: [Chapter 30 (PING) @ Borgers, An Introduction to Modeling Neuronal Dynamics, 2017](/Readings/Borgers_PING_2017.pdf)
-- Read: [Chapter 31 (ING) @ Borgers, An Introduction to Modeling Neuronal Dynamics, 2017](/Readings/Borgers_ING_2017.pdf)
-- Read: [*A Machine May Not Take Your Job, but One Could Become Your Boss*, NYT, 2019](/Readings/Roose_NYT_2019.pdf)
-- Read: [*AI Can Almost Write Like a Human—and More Advances Are Coming*, WSJ, 2020](/Readings/Council_WSJ_2020.pdf)
-- Lecture Slides: [Gamma Rhythms](/Slides/Gamma_Lecture.pdf)
-- Code: [Gamma Lab](Gamma.html)
-
-# Beta rhythms
-- Read: [Chapter 33 (Beta) @ Borgers, An Introduction to Modeling Neuronal Dynamics, 2017](/Readings/Borgers_Beta_2017.pdf)
-- Read: [*The False Promise of ChatGPT*, NYT, 2023](/Readings/Chomsky_NYT_2023.pdf)
-- Read: [*The A.I. Disruption We've Been Waiting for Has Arrived*, NYT, 2026](/Readings/Ford_NYT_2026.pdf)
-- Lecture Slides: [Beta Rhythms](Slides/Beta_Lecture.pdf)
-- Code: [Beta Lab](Beta.html)
-
-# Gamma + Beta rhythms
-- Lecture Slides: [Gamma Beta Rhythms](Slides/Gamma_Beta_Lecture.pdf)
-- Code: [Gamma Beta Lab](Gamma_Beta_Lab.html)
-
-- Read: [Kramer et al, *Golden rhythms as a theoretical framework...*, 2022](/Readings/Kramer_2022.pdf)
-- Read: [*Chips Off the Old Block: Computers Are Taking Design Cues From Human Brains*, NYT, 2017](/Readings/Metz_NYT_2017.pdf)
-- Read: [*Artificial Intelligence Hits the Barrier of Meaning*, NYT, 2018](/Readings/Mitchell_NYT_2018.pdf)
-- Read: [*‘The Beginning of a Wave’: A.I. Tiptoes Into the Workplace*, NYT, 2018](/Readings/Lohr_NYT_2018.pdf)
-- Lecture Slides [SHO](SHO.pdf)
-- Code:
--->
+<section id="challenges" class="level1">
+<h1>Challenges</h1>
+<ol type="1">
+<li><p>Simulate a <strong>traditional RNN</strong> with 2 input nodes, 4 hidden nodes, and 2 output nodes. See, for example, slide 26 from the lecture. You will need to make parameter choices, such as the connectivity matrices (<span class="math inline">\(\mathbf{W}_{xh}\)</span>, <span class="math inline">\(\mathbf{W}_{hh}\)</span>, <span class="math inline">\(\mathbf{W}_{ho}\)</span>), the activation function <span class="math inline">\(\theta(x)\)</span>, etc. For input, make <span class="math inline">\(i_t\)</span> a one-dimensional vector of random noise (normally distributed).</p></li>
+<li><p>Simulate a <strong>resonant recurrent network RRN</strong> with 4 nodes. See, for example, Equation (3) at <a href="https://journals.aps.org/prresearch/abstract/10.1103/phlp-rhny">this paper</a>. To simplify, if you’d like, you can set the noise term <span class="math inline">\(\epsilon_t^k=0\)</span>. You will need to make parameters choices, such as the history-dependent coefficients (<span class="math inline">\(\alpha_{1}^k\)</span>, <span class="math inline">\(\alpha_{2}^k\)</span>), the connectivity matrix <span class="math inline">\(\mathbf{W}^{kj}\)</span>, etc. For input, you can make <span class="math inline">\(u_t\)</span> a one-dimensional vector of random noise (normally distributed) or something else interesting.</p></li>
+</ol>
 
 
 </section>

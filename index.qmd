@@ -34,16 +34,14 @@ subtitle: "Methods in Computational Neuroscience"
 - Code: [Hopfield Examples](Hopfield.html)
 - Code: [Linear Algebra Examples](Linear_Algebra.html)
 
-<!-- # Recurrent Neural Networks
-- Read: [*The Next Frontier Is Inside Your Brain*, NYT, 2013](/Readings/Boffey_NYT_2013.pdf)
-- Read: [*Probing Brain’s Depth, Trying to Aid Memory*, NYT, 2014](/Readings/Carey_NYT_2014.pdf)
-- Read: [*Brace Yourself for the AI Tsunami*, WSJ, 2026](/Readings/Noonan_WSJ_2026.pdf)
-- Read: [*AI Isn’t Coming for Every White-Collar Job. At Least Not Yet*, NYT, 2026](/Readings/Metz_NYT_2026.pdf)
+# Recurrent Neural Networks
+- Read: [*Pause AI for Humanity’s Sake*, WSJ, 2026](/Readings/Noonan_WSJ_2026.pdf)
+- Read: [*We Need a Science of the AI Mind*, WSJ, 2026](/Readings/Berg_WSJ_2026.pdf)
+- Read: [Kramer, *Brain-inspired, interpretable, resonant recurrent neural networks*, PRR, 2026](https://journals.aps.org/prresearch/abstract/10.1103/phlp-rhny)
 - Lecture Slides: [RNN](/Slides/RNN_Lecture.pdf)
-- Lecture Slides: [Themes So Far](/Slides/Course_Themes.pdf)
 - Code: [RNN Examples](RNN.html)
  
-# Leaky Integrate \& Fire Neuron
+<!-- # Leaky Integrate \& Fire Neuron
 - Read: [Abbott, Brain Res Bull, 1999](/Readings/Abbott_1999.pdf)
 - Read: [Chapter 1, pages 5-12 @ C. Koch, Biophysics of computation, 1998](/Readings/Koch_Chapter_1.pdf)
 - Read: [*Learning How Little We Know About the Brain*, NYT, 2014](/Readings/Gorman_NYT_2014.pdf)
