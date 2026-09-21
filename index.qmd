@@ -15,7 +15,7 @@ subtitle: "Methods in Computational Neuroscience"
 ## Teams
 - [Rosters](/Slides/teams_1.txt)
 - Skill Demonstration [Rubric](/Slides/Skill_Demonstration_Rubric.pdf)
-- Skill Demonstration [Template TBD]()
+- Skill Demonstration [Template](/Slides/Skill_Demonstration_Template.pptx)
 ---
 
 # Perceptron and Backpropagation
