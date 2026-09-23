@@ -44,7 +44,7 @@ subtitle: "Methods in Computational Neuroscience"
 # Leaky Integrate \& Fire Neuron
 - Read: [Abbott, Brain Res Bull, 1999](/Readings/Abbott_1999.pdf)
 - Read: [Chapter 1, pages 5-12 @ C. Koch, Biophysics of computation, 1998](/Readings/Koch_Chapter_1.pdf)
-- Note Taker: [LIF](/Slides/LIF_Lecture.pdf)
+- Lecture Slides: [LIF](/Slides/LIF_Lecture.pdf)
 - Code:  [LIF in Python](LIF.html)
 
 <!-- # Hodgkin-Huxley Neuron
