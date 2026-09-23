@@ -41,16 +41,13 @@ subtitle: "Methods in Computational Neuroscience"
 - Lecture Slides: [RNN](/Slides/RNN_Lecture.pdf)
 - Code: [RNN Examples](RNN.html)
  
-<!-- # Leaky Integrate \& Fire Neuron
+# Leaky Integrate \& Fire Neuron
 - Read: [Abbott, Brain Res Bull, 1999](/Readings/Abbott_1999.pdf)
 - Read: [Chapter 1, pages 5-12 @ C. Koch, Biophysics of computation, 1998](/Readings/Koch_Chapter_1.pdf)
-- Read: [*Learning How Little We Know About the Brain*, NYT, 2014](/Readings/Gorman_NYT_2014.pdf)
-- Read: [*Relax, the Terminator Is Far Away*, NYT, 2015](/Readings/Markoff_NYT_2015.pdf)
-- Read: [*Barbie Wants to Get to Know Your Child*, NYT, 2015](/Readings/Vlahos_NYT_2015.pdf)
-- Note Taker: [LIF](/Slides/LIF.pdf)
+- Note Taker: [LIF](/Slides/LIF_Lecture.pdf)
 - Code:  [LIF in Python](LIF.html)
 
-# Hodgkin-Huxley Neuron
+<!-- # Hodgkin-Huxley Neuron
 - Read: [Chapter 2, pages 25-42 @ E. Izhikevich, Dynamical Systems in Neuroscience, 2007.](/Readings/Izhikevich_Chapter_2.pdf)
 - Read: [Hodgkin-Huxley 1-page cheat sheet](/Readings/Hodgkin-Huxley_Cheat_Sheet.pdf)
 - Read: [*A Dying Young Woman’s Hope in Cryonics and a Future*, NYT, 2015](/Readings/Harmon_NYT_2015.pdf)
@@ -58,12 +55,6 @@ subtitle: "Methods in Computational Neuroscience"
 - Read: [*When Is the Singularity? Probably Not in Your Lifetime*, NYT, 2016](/Readings/Markoff_NYT_2016.pdf)
 - Lecture Slides: [HH](/Slides/HH_Lecture_1.pdf)
 - Code:  [Hodgkin-Huxley Neuron in Python](HH.html)
-
-# Projects
-- [Project Outline](/Slides/Project_Papers_and_Ideas.pdf)
-- Template Slides: [Check in Template PDF](/Slides/Project_Check_In_Template.pdf), [Check in Template PowerPoint](/Slides/Project_Check_In_Template.pptx)
-- **Grading Rubrics:** [Presentation](/Slides/NE593_Presentation_Rubric.pdf), [GitHub](/Slides/NE593_Github_Rubric.pdf)
-- Code: [GitHub Introduction](Exercise-in-GitHub.html)
 
 # Theta Neuron
 - Read: [Wikipedia](https://en.wikipedia.org/wiki/Theta_model) (for much more detail)

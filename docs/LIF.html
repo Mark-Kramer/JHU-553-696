@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Perceptron – JHU EN.553.696</title>
+<title>Leaky Integrate and Fire Neuron – JHU EN.553.696</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -228,7 +228,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"options":{"read-only":"false","fig-width":7,"warning":"true","autorun":"","label":"","out-height":"","dpi":72,"results":"markup","classes":"","comment":"","fig-cap":"","context":"interactive","message":"true","output":"true","out-width":"700px","fig-height":5},"code":"import numpy as np\nimport matplotlib.pyplot as plt\nimport time","id":1},{"options":{"read-only":"false","fig-width":7,"warning":"true","autorun":"","label":"","out-height":"","dpi":72,"results":"markup","classes":"","comment":"","fig-cap":"","context":"interactive","message":"true","output":"true","out-width":"700px","fig-height":5},"code":"def my_perceptron(input1, input2, w1, w2, theta):\n    print(\"Do something!\")\n    # Define the activity of the perceptron, x. \n    # Apply a binary threshold.","id":2},{"options":{"read-only":"false","fig-width":7,"warning":"true","autorun":"","label":"","out-height":"","dpi":72,"results":"markup","classes":"","comment":"","fig-cap":"","context":"interactive","message":"true","output":"true","out-width":"700px","fig-height":5},"code":"my_perceptron(1,0,0.5,-0.5,0)","id":3},{"options":{"read-only":"false","fig-width":7,"warning":"true","autorun":"","label":"","out-height":"","dpi":72,"results":"markup","classes":"","comment":"","fig-cap":"","context":"interactive","message":"true","output":"true","out-width":"700px","fig-height":5},"code":"def known_answer(slope, intercept, x, y):\n    print(\"Do something!\")\n    #Determine yline\n    #Determine if y is above yline","id":4},{"options":{"read-only":"false","fig-width":7,"warning":"true","autorun":"","label":"","out-height":"","dpi":72,"results":"markup","classes":"","comment":"","fig-cap":"","context":"interactive","message":"true","output":"true","out-width":"700px","fig-height":5},"code":"x,y       = 0.7,3\nslope     = 2\nintercept = 1\ncorrect_answer = known_answer(slope, intercept, x, y)\nprint(correct_answer)","id":5},{"options":{"read-only":"false","fig-width":7,"warning":"true","autorun":"","label":"","out-height":"","dpi":72,"results":"markup","classes":"","comment":"","fig-cap":"","context":"interactive","message":"true","output":"true","out-width":"700px","fig-height":5},"code":"def feedforward(x, y, wx, wy, wb):\n    print(\"Do something!\")\n    # Fix the bias.\n    # Define the activity of the neuron, activity.\n    # Apply the binary threshold.","id":6},{"options":{"read-only":"false","fig-width":7,"warning":"true","autorun":"","label":"","out-height":"","dpi":72,"results":"markup","classes":"","comment":"","fig-cap":"","context":"interactive","message":"true","output":"true","out-width":"700px","fig-height":5},"code":"x,y      = 0.7,3\nwx,wy,wb = 3*[0.5]\nperceptron_guess = feedforward(x, y, wx, wy, wb)\nprint(perceptron_guess)","id":7},{"options":{"read-only":"false","fig-width":7,"warning":"true","autorun":"","label":"","out-height":"","dpi":72,"results":"markup","classes":"","comment":"","fig-cap":"","context":"interactive","message":"true","output":"true","out-width":"700px","fig-height":5},"code":"error = 'SOMETHING?'\nprint(error)","id":8},{"options":{"read-only":"false","fig-width":7,"warning":"true","autorun":"","label":"","out-height":"","dpi":72,"results":"markup","classes":"","comment":"","fig-cap":"","context":"interactive","message":"true","output":"true","out-width":"700px","fig-height":5},"code":"learning_constant = 0.01","id":9},{"options":{"read-only":"false","fig-width":7,"warning":"true","autorun":"","label":"","out-height":"","dpi":72,"results":"markup","classes":"","comment":"","fig-cap":"","context":"interactive","message":"true","output":"true","out-width":"700px","fig-height":5},"code":"wx = \"SOMETHING\"\nwy = \"SOMETHING\"\nwb = \"SOMETHING\"\nprint(wx)","id":10},{"options":{"read-only":"false","fig-width":7,"warning":"true","autorun":"","label":"","out-height":"","dpi":72,"results":"markup","classes":"","comment":"","fig-cap":"","context":"interactive","message":"true","output":"true","out-width":"700px","fig-height":5},"code":"slope     = 2;                      # Define the line with slope, \nintercept = 1;                      # ... and intercept.\n\nwx,wy,wb = 3*[0.5];                 # Choose initial values for the perceptron's weights\n\nlearning_constant = 0.01;           # And, set the learning constant.\n\nestimated_slope = np.zeros(2000)    # Variables to hold the perceptron estimates.\nestimated_intercept = np.zeros(2000)\n\nfor k in np.arange(2000):           # For 2000 iteractions,\n    x = np.random.randn(1);         # Choose a random (x,y) point in the plane\n    y = np.random.randn(1);\n                                    # Step 1: Calculate known answer.\n    \n                                    # Step 2. Ask perceptron to guess an answer.\n    \n                                    # Step 3. Compute the error.\n    \n                                    # Step 4. Adjust weights according to error.\n     \n    estimated_slope[k] = -wx/wy;    # Compute estimated slope from perceptron.\n    estimated_intercept[k] = -wb/wy;# Compute estimated intercept from perceptron.\n\n# Display the results! ------------------------------------------------------------------------\nx_range = np.linspace(-2,2,100);                  # For a range of x-values,\nfig, ax = plt.subplots()\nax.plot(x_range, slope*x_range+intercept, 'k')    # ... plot the true line,\n\nfor k in range(1,2000,100):                       # ... and plot some intermediate perceptron guess\n     ax.plot(x_range, estimated_slope[k]*x_range+estimated_intercept[k], 'r', alpha=0.25)\n                                                  # ... and plot the last perceptron guess\nplt.xlabel('x')\nplt.title('Known answer (black), Perceptron final guess (blue)')\nplt.show()","id":11}];
+globalThis.qpyodideCellDetails = [{"id":1,"code":"import numpy as np\nimport matplotlib.pyplot as plt","options":{"message":"true","autorun":"","warning":"true","context":"interactive","comment":"","results":"markup","fig-height":5,"classes":"","dpi":72,"out-width":"700px","read-only":"false","label":"","fig-width":7,"out-height":"","output":"true","fig-cap":""}},{"id":2,"code":"Vstar=1.0\ntau  =1.0","options":{"message":"true","autorun":"","warning":"true","context":"interactive","comment":"","results":"markup","fig-height":5,"classes":"","dpi":72,"out-width":"700px","read-only":"false","label":"","fig-width":7,"out-height":"","output":"true","fig-cap":""}},{"id":3,"code":"dt=0.01","options":{"message":"true","autorun":"","warning":"true","context":"interactive","comment":"","results":"markup","fig-height":5,"classes":"","dpi":72,"out-width":"700px","read-only":"false","label":"","fig-width":7,"out-height":"","output":"true","fig-cap":""}},{"id":4,"code":"V = np.zeros([1000,1])\nnp.shape(V)","options":{"message":"true","autorun":"","warning":"true","context":"interactive","comment":"","results":"markup","fig-height":5,"classes":"","dpi":72,"out-width":"700px","read-only":"false","label":"","fig-width":7,"out-height":"","output":"true","fig-cap":""}},{"id":5,"code":"V[0]=0.2","options":{"message":"true","autorun":"","warning":"true","context":"interactive","comment":"","results":"markup","fig-height":5,"classes":"","dpi":72,"out-width":"700px","read-only":"false","label":"","fig-width":7,"out-height":"","output":"true","fig-cap":""}},{"id":6,"code":"for k in range(1,999):\n    V[k+1] = V[k] + dt*(\"something\")","options":{"message":"true","autorun":"","warning":"true","context":"interactive","comment":"","results":"markup","fig-height":5,"classes":"","dpi":72,"out-width":"700px","read-only":"false","label":"","fig-width":7,"out-height":"","output":"true","fig-cap":""}},{"id":7,"code":"plt.figure()\nplt.plot(V)\nplt.show()","options":{"message":"true","autorun":"","warning":"true","context":"interactive","comment":"","results":"markup","fig-height":5,"classes":"","dpi":72,"out-width":"700px","read-only":"false","label":"","fig-width":7,"out-height":"","output":"true","fig-cap":""}},{"id":8,"code":"t = np.arange(0,len(V))*dt","options":{"message":"true","autorun":"","warning":"true","context":"interactive","comment":"","results":"markup","fig-height":5,"classes":"","dpi":72,"out-width":"700px","read-only":"false","label":"","fig-width":7,"out-height":"","output":"true","fig-cap":""}},{"id":9,"code":"plt.figure()\nplt.plot(t,V)\nplt.xlabel('Time [s]')\nplt.ylabel('V')\nplt.show()","options":{"message":"true","autorun":"","warning":"true","context":"interactive","comment":"","results":"markup","fig-height":5,"classes":"","dpi":72,"out-width":"700px","read-only":"false","label":"","fig-width":7,"out-height":"","output":"true","fig-cap":""}},{"id":10,"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\nVstar   = 1                           #Set the parameter Vstar.\ntau  = 1                              #Set the parameter tau.\ndt  = 0.01                            #Set the timestep.\nV   = np.zeros([1000,1])              #Initialize V.\nV[0]= 0.2;                            #Set the initial value of V.\n\nfor k in range(1,999):                #March forward in time,\n    V[k+1] = V[k] + dt*(\"something\")  #... updating V along the way.\n\nt = np.arange(0,len(V))*dt            #Define the time axis.\n\nplt.figure()\nplt.plot(t,V)                         #Plot the results.\nplt.xlabel('Time [s]')\nplt.ylabel('Voltage [mV]')\nplt.show()","options":{"message":"true","autorun":"","warning":"true","context":"interactive","comment":"","results":"markup","fig-height":5,"classes":"","dpi":72,"out-width":"700px","read-only":"false","label":"","fig-width":7,"out-height":"","output":"true","fig-cap":""}},{"id":11,"code":"Vth    =  0.75;     #Define the voltage threshold.\nVreset = -1.0;     #Define the reset voltage.\n\nfor k in range(1,999):                #March forward in time,\n    V[k+1] = V[k] + dt*(\"something\")  #... updating V along the way.\n    ### ADD SOMETHING HERE??? --------------------------","options":{"message":"true","autorun":"","warning":"true","context":"interactive","comment":"","results":"markup","fig-height":5,"classes":"","dpi":72,"out-width":"700px","read-only":"false","label":"","fig-width":7,"out-height":"","output":"true","fig-cap":""}},{"id":12,"code":"### ADD YOUR CODE!","options":{"message":"true","autorun":"","warning":"true","context":"interactive","comment":"","results":"markup","fig-height":5,"classes":"","dpi":72,"out-width":"700px","read-only":"false","label":"","fig-width":7,"out-height":"","output":"true","fig-cap":""}}];
 
 
 </script>
@@ -419,6 +419,35 @@ globalThis._qpyodideGetInstance = function() {
 
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -449,7 +478,7 @@ globalThis._qpyodideGetInstance = function() {
 <span class="menu-text">Intro</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./Perceptron.html" aria-current="page"> 
+    <a class="nav-link" href="./Perceptron.html"> 
 <span class="menu-text">Perceptron</span></a>
   </li>  
   <li class="nav-item">
@@ -485,16 +514,13 @@ globalThis._qpyodideGetInstance = function() {
    
   <ul>
   <li><a href="#preliminaries" id="toc-preliminaries" class="nav-link active" data-scroll-target="#preliminaries"><span class="header-section-number">1</span> Preliminaries</a></li>
-  <li><a href="#a-simple-perceptron-model" id="toc-a-simple-perceptron-model" class="nav-link" data-scroll-target="#a-simple-perceptron-model"><span class="header-section-number">2</span> A simple perceptron model</a></li>
-  <li><a href="#build-a-perceptron-classifier" id="toc-build-a-perceptron-classifier" class="nav-link" data-scroll-target="#build-a-perceptron-classifier"><span class="header-section-number">3</span> Build a perceptron classifier</a>
-  <ul class="collapse">
-  <li><a href="#provide-perceptron-with-inputs-and-known-answer." id="toc-provide-perceptron-with-inputs-and-known-answer." class="nav-link" data-scroll-target="#provide-perceptron-with-inputs-and-known-answer."><span class="header-section-number">3.1</span> Provide perceptron with inputs and known answer.</a></li>
-  <li><a href="#ask-perceptron-to-guess-an-answer." id="toc-ask-perceptron-to-guess-an-answer." class="nav-link" data-scroll-target="#ask-perceptron-to-guess-an-answer."><span class="header-section-number">3.2</span> Ask perceptron to guess an answer.</a></li>
-  <li><a href="#compute-the-error." id="toc-compute-the-error." class="nav-link" data-scroll-target="#compute-the-error."><span class="header-section-number">3.3</span> Compute the error.</a></li>
-  <li><a href="#adjust-all-weights-according-to-the-error." id="toc-adjust-all-weights-according-to-the-error." class="nav-link" data-scroll-target="#adjust-all-weights-according-to-the-error."><span class="header-section-number">3.4</span> Adjust all weights according to the error.</a></li>
-  <li><a href="#return-to-step-1-and-repeat" id="toc-return-to-step-1-and-repeat" class="nav-link" data-scroll-target="#return-to-step-1-and-repeat"><span class="header-section-number">3.5</span> Return to Step 1 and repeat …</a></li>
-  </ul></li>
-  <li><a href="#challenges" id="toc-challenges" class="nav-link" data-scroll-target="#challenges"><span class="header-section-number">4</span> Challenges</a></li>
+  <li><a href="#numerical-solutions---introduction" id="toc-numerical-solutions---introduction" class="nav-link" data-scroll-target="#numerical-solutions---introduction"><span class="header-section-number">2</span> Numerical solutions - Introduction</a></li>
+  <li><a href="#numerical-solutions---implementation" id="toc-numerical-solutions---implementation" class="nav-link" data-scroll-target="#numerical-solutions---implementation"><span class="header-section-number">3</span> Numerical solutions - Implementation</a></li>
+  <li><a href="#lif-code-version-1" id="toc-lif-code-version-1" class="nav-link" data-scroll-target="#lif-code-version-1"><span class="header-section-number">4</span> LIF CODE (version 1)</a></li>
+  <li><a href="#voltage-threshold-reset" id="toc-voltage-threshold-reset" class="nav-link" data-scroll-target="#voltage-threshold-reset"><span class="header-section-number">5</span> Voltage threshold &amp; reset</a></li>
+  <li><a href="#if-code-version-2" id="toc-if-code-version-2" class="nav-link" data-scroll-target="#if-code-version-2"><span class="header-section-number">6</span> I&amp;F CODE (version 2)</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="header-section-number">7</span> Discussion</a></li>
+  <li><a href="#challenges" id="toc-challenges" class="nav-link" data-scroll-target="#challenges"><span class="header-section-number">8</span> Challenges</a></li>
   </ul>
 </nav>
     </div>
@@ -513,7 +539,7 @@ globalThis._qpyodideGetInstance = function() {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Perceptron</h1>
+<h1 class="title">Leaky Integrate and Fire Neuron</h1>
 </div>
 
 
@@ -530,161 +556,124 @@ globalThis._qpyodideGetInstance = function() {
 </header>
 
 
-<p>In this notebook, we will construct simple perceptron models. We’ll start by implementing a perceptron model, and seeing how it behaves. We’ll then outline the steps to train a perceptron to classify a point as above or below a line.</p>
-<p>This discussion follows the excellent example and discussion at <a href="https://natureofcode.com/book/chapter-10-neural-networks/">The Nature of Code</a>. Please see that reference for additional details, and a more sophisticated coding strategy (using Classes in Python).</p>
+<p>In this notebook we will use Python to simulate the leaky integrate and fire (LIF) neuron model. We’ll investigate, in particular, how the spiking activity varies as we adjust the input current <span class="math inline">\(I\)</span>.</p>
 <section id="preliminaries" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Preliminaries</h1>
-<p>Before beginning, let’s load in the Python packages we’ll need:</p>
+<p>Before beginning, let’s load in the Python package we’ll need:</p>
 <div id="qpyodide-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-<section id="a-simple-perceptron-model" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> A simple perceptron model</h1>
-<p>Let’s examine a simple perceptron that accepts inputs, processes those inputs, and returns an output. To do so, please complete this function:</p>
+<section id="numerical-solutions---introduction" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Numerical solutions - Introduction</h1>
+<p>How do we compute a numerical solution to the integrate and fire model? The basic idea is to rearrange the differential equation to get <span class="math inline">\(V(t+1)\)</span> on the left hand side, and <span class="math inline">\(V(t)\)</span> on the right hand side. Then, if we know what’s happening at time <span class="math inline">\(t\)</span>, we can solve for what’s happening at time <span class="math inline">\(t+1\)</span>.</p>
+<p>For example, consider the differential equation:</p>
+<p><span class="math display">\[
+  \dfrac{dV}{dt} = -\dfrac{V-V_*}{\tau}
+\]</span></p>
+<p>In words, we can think of:</p>
+<p><span class="math inline">\(dV\)</span> as the “change in voltage V”,</p>
+<p><span class="math inline">\(dt\)</span> as the “change in time t”.</p>
+<p>Let’s consider the case that we record the voltage <span class="math inline">\(V\)</span> in discrete time steps. So we observe:</p>
+<p><span class="math inline">\(V[0], V[1], V[2], \ldots\)</span></p>
+<p>at times:</p>
+<p><span class="math inline">\(dt, \, 2*dt, \, 3*dt, \ldots\)</span></p>
+<p>where <span class="math inline">\(dt\)</span> is the time between our samples of <span class="math inline">\(V\)</span>.</p>
+<p>We can now write the “change in voltage V” as:</p>
+<p><span class="math display">\[
+  dV = V(t+1) - V(t)
+\]</span></p>
+<p>Notice that the change in voltage is the difference in V between two sequential time samples. Now, let’s rewrite <span class="math inline">\(\dfrac{dV}{dt}\)</span> as,</p>
+<p><span class="math display">\[
+  \dfrac{dV}{dt} = \dfrac{ V(t+1) - V(t) }{ dt }
+\]</span></p>
+<p>where we’ve replaced <span class="math inline">\(dV\)</span>. Now, let’s substitute this expression into the equation at the top of this file:</p>
+<p><span class="math display">\[
+  \dfrac{ V(t+1) - V(t) }{ dt } = \dfrac{I}{C}.  
+\]</span></p>
+<p>Solving this equation for <span class="math inline">\(V(t+1)\)</span> you’ll find that:</p>
+<p><span class="math display">\[
+  V(t+1) = V(t) + dt*(-\dfrac{V(t)-V_*}{\tau})
+\]</span></p>
+<p>Notice that, in this expression, we use our current value of the voltage <span class="math inline">\(V(t)\)</span> and the model (<span class="math inline">\(-\dfrac{V(t)-V_*}{\tau}\)</span>) to determine the next value of the voltage V(t+1).</p>
+<p>Now, let’s program this equation in Python. First, let’s set the values for the parameters <span class="math inline">\(V_*\)</span> and <span class="math inline">\(\tau\)</span>.</p>
 <div id="qpyodide-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>We also need to set the value for <span class="math inline">\(dt\)</span>. This defines the time step for our model. We must choose it small enough so that we don’t miss anything interesting. We’ll choose:</p>
 <div id="qpyodide-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Let’s assume the units of time are seconds. So, we step forward in time by <span class="math inline">\(0.01\)</span> s.</p>
+<p>The right hand side of our equation is nearly defined, but we’re still missing one thing, <span class="math inline">\(V(t)\)</span>.</p>
 <div class="callout callout-style-simple callout-none no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p><strong>Q:</strong> How many inputs does the function take? How many outputs does it return?</p>
+<p><strong>Q:</strong> What value do we assign to <span class="math inline">\(V(t)\)</span>?</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<strong>Q:</strong> Apply this function to different sets of inputs. Consider,
-<p>
-</p>
-<code>input1 = 1, input2 = 0, w1 = 0.5, w2 = -0.5, theta = 0</code>
-<p>
-</p>
-and
-<p>
-</p>
-<code>input1 = 1, input2 = 0, w1 = 0.5, w2 = -0.5, theta = -1</code>
-<p>
-</p>
-<p>What do you find?</p>
-</div>
-</div>
-</div>
-</section>
-<section id="build-a-perceptron-classifier" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Build a perceptron classifier</h1>
-<p>We’d like to create a method to train a perceptron to classify a point (x,y) as above or below a line. Let’s implement this training procedure.</p>
-<section id="provide-perceptron-with-inputs-and-known-answer." class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="provide-perceptron-with-inputs-and-known-answer."><span class="header-section-number">3.1</span> Provide perceptron with inputs and known answer.</h2>
-<p>First, let’s make a function that computes a line, and determines if a given <code>y</code> value is above or below the line. We’ll use this function to return the correct (“known”) answer. Having known answers is important for training the perceptron. We’ll use the known answers to tell the when it’s right or wrong (i.e., when the perceptron makes an error).</p>
-<p>Let’s define the function (<code>known_answer</code>) should take four inputs:</p>
-<ul>
-<li><code>slope</code></li>
-<li><code>intercept</code></li>
-<li><code>x</code></li>
-<li><code>y</code></li>
-</ul>
-<p>where the (x,y) value is a point we choose on the plane. The function should return one output:</p>
-<ul>
-<li><code>desired_output</code></li>
-</ul>
-<p>where,</p>
-<p><code>desired_output = 1</code>, if the <code>y</code> value (the last input) is above the line,</p>
-<p><code>desired_putput = 0</code>, if the <code>y</code> value (the last input) is below the line.</p>
-<p>Complete the function below:</p>
+<p>So here’s an easier question: what <em>initial</em> value do we assign to <span class="math inline">\(V(t)\)</span>?</p>
+<p>To start, we’ll create an array of zeros to hold our results for <span class="math inline">\(V\)</span>:</p>
 <div id="qpyodide-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<strong>Q:</strong> Consider the (x,y) point,
-<p>
-</p>
-<code>x,y = 0.7,3</code>
-<p>
-</p>
-and the line with slope and intercept,
-<p>
-</p>
-<code>slope = 2</code> <br><br> <code>intercept = 1</code>
-<p>
-</p>
-<p>Is the (x,y) point above or below the line?</p>
-</div>
-</div>
-</div>
-<p><strong>A:</strong> To answer this, let’s ask our function,</p>
+<p>This array <code>V</code> consists of 1000 rows and 1 column. We can think of each row entry as corresponding to a discrete step in time. Our goal is to fill-in the values of <code>V</code> (i.e., step forward in time), in a way consistent with our model.</p>
+<p>Let’s choose an initial value for <code>V</code> of 0.2, which in our simple model we’ll assume represents the rest state.</p>
 <div id="qpyodide-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<strong>A (Continued):</strong> We find a <code>correct_answer</code> of 1.
-<p>
-</p>
-<p>So, the point <code>(x,y)=(0.7,3)</code> is above the line with slope 2 and intercept 1.</p>
-</section>
-<section id="ask-perceptron-to-guess-an-answer." class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="ask-perceptron-to-guess-an-answer."><span class="header-section-number">3.2</span> Ask perceptron to guess an answer.</h2>
-<p>Our next step is to compare our desired output (computed in Step 1) to the output guessed by the perceptron. To do so, we’ll need to compute the <em>feedforward</em> solution for the perceptron (i.e., given the inputs and bias, determine the perceptron output). Let’s do so complete the function below,</p>
-<div id="qpyodide-insertion-location-6"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>This function takes five inputs:</p>
-<ul>
-<li><code>x</code> = the x coordinate of the point we choose in the plane.</li>
-<li><code>y</code> = the y coordinate of the point we choose in the plane.</li>
-<li><code>wx</code> = the weight of x input.</li>
-<li><code>wy</code> = the weight of y input.</li>
-<li><code>wb</code> = the weight of the bias.</li>
-</ul>
-<p>And this function returns one output:</p>
-<ul>
-<li>the perceptron’s guess, is the point above (=1) or below (=0) the line.</li>
-</ul>
 <div class="callout callout-style-simple callout-none no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<strong>Q:</strong> Again consider the (x,y) point,
-<p>
-</p>
-<code>x,y = 0.7,3</code>
-<p>
-</p>
-and set initial values for the perceptron weights. Let’s just set these all to 0.5; our goal in the rest of this module will be to train the perceptron by adjusting these weights. But for now,
-<p>
-</p>
-<code>wx,wy,wb = 0.5</code>
-<p>
-</p>
-Then, ask the perceptron for it’s guess for it’s guess, is the point above or below the line?
-<p>
-</p>
+<p><strong>Q:</strong> Given the initial state <code>V[0]=0.2</code>, calculate <code>V[1]</code>. Then calcualte <code>V[2]</code>.</p>
 </div>
 </div>
 </div>
+<p>After the two calculations above, we’ve moved forward two time steps into the future, from <span class="math inline">\(t=0\)</span> s to <span class="math inline">\(t=0.01\)</span> s, and then from <span class="math inline">\(t=0.01\)</span> s to <span class="math inline">\(t=0.02\)</span> s. But what if we want to know <span class="math inline">\(V\)</span> at <span class="math inline">\(t=10\)</span> s? Then, this iteration-by-hand procedure becomes much too boring and error-prone. So, what do we do? Let’s make the computer do it …</p>
+</section>
+<section id="numerical-solutions---implementation" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Numerical solutions - Implementation</h1>
+<p>Let’s computerize this iteration-by-hand procedure to find <code>V[999]</code>.</p>
+<p>To do so, we’ll use a <a href="https://wiki.python.org/moin/ForLoop">for-loop</a>.</p>
+<p>Here’s what it looks like:</p>
+<div id="qpyodide-insertion-location-6"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Q:</strong> Does this loop make sense? Describe what’s happening here. What is <code>something</code>?</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Q:</strong> Why does the <code>range</code> command end at <code>999</code>?</p>
+</div>
+</div>
+</div>
+<p>Execute this for-loop and examine the results in vector <code>V</code>. To do so, let’s plot <code>V</code>:</p>
 <div id="qpyodide-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p><strong>A:</strong> We find a <code>peceptron_guess</code> of 1.<br></p>
-<p>So, the perceptron guesses that the point <code>(x,y)=(0.7,3)</code> is above the line.</p>
-</section>
-<section id="compute-the-error." class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="compute-the-error."><span class="header-section-number">3.3</span> Compute the error.</h2>
-<p>We’ve now answered the question “<em>Is the (x,y) point above the line?</em>” in two ways:</p>
-<ul>
-<li>the known answer, and</li>
-<li>the perceptron’s guess.</li>
-</ul>
-<p>Let’s compute the error as the difference between these two answers:</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Q:</strong> What happens to the voltage after 1000 steps?</p>
+</div>
+</div>
+</div>
+<p>This plot is informative, but not great. Really, we’d like to plot the voltage as a function of <em>time</em>, not steps or indices. To do so, we need to define a time axis:</p>
 <div id="qpyodide-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-simple callout-none no-icon">
@@ -693,81 +682,124 @@ Then, ask the perceptron for it’s guess for it’s guess, is the point above o
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p><strong>Q:</strong> What do you find for the <code>error</code>? Does it make sense?</p>
+<p><strong>Q:</strong> What’s happening in the command above? Does it make sense? (If not, trying printing or plotting <code>t</code>.)</p>
 </div>
 </div>
 </div>
-</section>
-<section id="adjust-all-weights-according-to-the-error." class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="adjust-all-weights-according-to-the-error."><span class="header-section-number">3.4</span> Adjust all weights according to the error.</h2>
-<p>To update the weights, we’ll use the expression,</p>
-<p><code>new weight = weight + error * input * learning constant</code></p>
-<p>We need to compute this for each weight <code>(wx, wy, wb)</code>.</p>
-<p>First, let’s set the learning constant,</p>
+<p>Now, with <em>time</em> defined, let’s redo the plot of the voltage with the axes labeled appropriately.</p>
 <div id="qpyodide-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Then, we can compute the new weights,</p>
+<p>Finally, let’s put it all together . . .</p>
+</section>
+<section id="lif-code-version-1" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> LIF CODE (version 1)</h1>
+<p>So far, we constructed parts of the I&amp;F model in bits-and-pieces. Let’s now collect all the code, compute a numerical solution to the I&amp;F model, and plot the results (with appropriate axes).</p>
 <div id="qpyodide-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Notice that, in the update to <code>wb</code> we use the fact that the bias equals 1.</p>
 <div class="callout callout-style-simple callout-none no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p><strong>Q:</strong> What do you find for the new weights? Does it make sense?</p>
+<p><strong>Q:</strong> Adjust the parameter <code>Vstar</code>. What happens to <code>V</code> if <code>Vstar=0</code>? Can you set <code>Vstar</code> so that <code>V</code> &gt; 20 within 10 s?</p>
 </div>
 </div>
 </div>
 </section>
-<section id="return-to-step-1-and-repeat" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="return-to-step-1-and-repeat"><span class="header-section-number">3.5</span> Return to Step 1 and repeat …</h2>
-<p>We could try to compute these repetitions by hand, for example by repeating the cells above. To do so, we’d choose a new point in the (x,y) plane, determine whether it’s above the line 2x+1, ask the perceptron to guess whether it’s above the line, then use the error to update the perceptron’s weights.</p>
-<p>But we want to evaluate this procedure 2000 times. Doing so by hand would be a total pain, and highly error prone. Instead, let’s ask the computer to do the boring work of multiple repetitions. To do so, let’s collect the code above, and examine 2000 (x,y) points chosen randomly in the plane. We’ll wrap our code above inside a for-loop to make this efficient,</p>
+<section id="voltage-threshold-reset" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Voltage threshold &amp; reset</h1>
+<p>Notice, our model is missing something important: <strong>the reset</strong>.</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Q:</strong> Without the reset, how does the voltage behave as <span class="math inline">\(t\rightarrow\infty\)</span> (if <span class="math inline">\(Vstar&gt;0\)</span>)?</p>
+</div>
+</div>
+</div>
+<p>Now, let’s update our model to include the reset. To do so, we’ll add two things to our code.</p>
+<ul>
+<li>First, we’ll define the voltage threshold <code>Vth</code>, and reset voltage <code>Vreset</code>.</li>
+<li>Second, we’ll check to see if <code>V</code> exceeds <code>Vth</code> using an <a href="https://docs.python.org/3/tutorial/controlflow.html">if-statement</a>; if it does, then we’ll set <code>V</code> equal to <code>Vreset</code>.</li>
+</ul>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Q:</strong> How will you update the code below to include the reset?</p>
+</div>
+</div>
+</div>
 <div id="qpyodide-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
+<section id="if-code-version-2" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> I&amp;F CODE (version 2)</h1>
+<p>Now, let’s put it all together to make a complete I&amp;F model (with a thershold and reset), simulate it, and plot the result.</p>
+<div id="qpyodide-insertion-location-12"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Q:</strong> Adjust the parameter <code>I</code>. What happens to <code>V</code> if <code>I=10</code>? If <code>I=100</code>?</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Q:</strong> Adjust the parameter <code>C</code>. What happens to <code>V</code> if <code>C=0.1</code>? If <code>C=10</code>?</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Q:</strong> What is “spiking” in this I&amp;F model?</p>
+</div>
+</div>
+</div>
+<hr>
 </section>
-<section id="challenges" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Challenges</h1>
-<p><strong>1.</strong> Load the file <a href="./Data/training_data.csv">training_data.csv</a> available on the course repository. You will find that this file contains the following variables:</p>
-<p>Training Data:</p>
-<p><code>x_training</code> = x-coordinate to train the network</p>
-<p><code>y_training</code> = y-coordinate to train the network</p>
-<p><code>correct_answer</code> = vector of 0’s and 1’s.</p>
-<p>These three variables define the training data. For each (x,y)-coordinate, the <code>correct_answer</code> indicates whether the point is above (1) or below (0) the line. There are 2000 example (x,y)-cooridates, each with a correct classification.</p>
-<p>Load the file <a href="./Data/testing_data.csv">testing_data.csv</a> available on the course repository. You will find that this file contains the following variables:</p>
-<p>Testing Data:</p>
-<p><code>x_testing</code> = x-coordinate to test the network</p>
-<p><code>y_testing</code> = y-coordinate to test the network</p>
-<p>The challenge is to determine whether each (x,y)-coordinate in the testing data is above or below the line. To do so, train a perceptron using the training data. Then, apply your trained perceptron to the testing data.</p>
-<ol type="a">
-<li><p>For any point in the testing set (or any point in general), tell me: is the point above the line, below the line?</p></li>
-<li><p>What is the slope of the line?</p></li>
-<li><p>What is the intercept?</p></li>
+<section id="discussion" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Discussion</h1>
+<ol type="1">
+<li><p>Describe the main components of the <strong>IF</strong> model. Draw it (in some way).</p></li>
+<li><p>Describe the main components of the <strong>LIF</strong> model. Draw it (in some way).</p></li>
+<li><p>Describe the differences and similarities between the IF and LIF models.</p></li>
+<li><p>The IF model is meant to mimic a neurons activity. What is realistic about the IF model? What is unrealistic?</p></li>
+<li><p>Describe the roles of the IF model parameters <code>Vreset</code> and <code>Vthreshold</code>.</p></li>
+<li><p>Consider the IF model. Sketch voltage (V) versus time (t) for a small input current, for a large input current.</p>
+<ol type="1">
+<li>How does an increase in capacitance (C) impact the dynamics?</li>
+<li>Can you interpret this physically?</li>
+</ol></li>
+<li><p>Plot the f-I curve for the IF model.</p></li>
 </ol>
-<p><strong>2.</strong> Load the file <a href="./Data/training_data_3.csv">training_data_3.csv</a> available on the course repository. You will find that this file contains the following variables:</p>
-<p>Training Data:</p>
-<p><code>x_training</code> = x-coordinate to train the network</p>
-<p><code>y_training</code> = y-coordinate to train the network</p>
-<p><code>z_training</code> = z-coordinate to train the network</p>
-<p><code>correct_answer</code> = vector of 0’s and 1’s.</p>
-<p>There are 1000 example points each with a correct classification, which indicates whether the point is above (1) or below (0) a plane.</p>
-<p>Load the file <a href="./Data/testing_data_3.csv">testing_data_3.csv</a> available on the course repository. You will find that this file contains the following variables:</p>
-<p>Testing Data:</p>
-<p><code>x_testing</code> = x-coordinate to test the network</p>
-<p><code>y_testing</code> = y-coordinate to test the network</p>
-<p><code>z_testing</code> = z-coordinate to test the network</p>
-<p>The classification for these points, as either above or below the plane, is unknown.</p>
-<p>The challenge is to correctly classify each point in the <code>testing</code> data as above or below the plane. To do so, train a perceptron using the training data. Then, apply your trained perceptron to the testing data.</p>
-<ol type="a">
-<li><p>How many points in the testing data are above the plane, below the plane?</p></li>
-<li><p>Uese the results of your trained perceptron to write an equation for the plane? Hint: write the equation in this form,</p>
-<p>a x + b y + c z = d</p></li>
+<hr>
+</section>
+<section id="challenges" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Challenges</h1>
+<ol type="1">
+<li><p>Consider the <strong>LIF</strong> model. Simulate the model to plot voltage (V) versus time (t) for a small input current, for a large input current.</p></li>
+<li><p>Perform numerical simulations to determine how doubling the capacitance (C) impacts the firing rate of the LIF model. Based on your numerical simulations, does the firing rate increase or decrease? Provide a physical explanation for your results (i.e., how does the charge move around the circuit to impact the firing rate?) HINT: Capacitance represents the <em>capacity</em> of a cell to hold charge.</p></li>
+<li><p>Perform numerical simulations to determine how doubling the resistance (R) impacts the firing rate of the LIF model. Based on your numerical simulations, does the firing rate increase or decrease? Provide a physical explanation for your results (i.e., how does the charge move around the circuit to impact the firing rate?) HINT: Higher resistance makes it harder for charge to flow in or out of the cell.</p></li>
+<li><p>Determine how the firing rate of the LIF model varies with input I. Plot the firing rate versus I (i.e., plot the “f-I curve”).</p></li>
 </ol>
-<p>and determine the unknown parameters a, b, c, d.</p>
-<p><strong>3.</strong> Usually, for the Perceptron, we set <code>bias=1</code>. Choose instead <code>bias=-1</code>. Repeat Challenge 1 with <code>bias=-1</code> and describe how your results change.</p>
 
 
 </section>
