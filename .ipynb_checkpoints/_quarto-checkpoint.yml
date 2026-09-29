@@ -18,16 +18,16 @@ website:
         text: Perceptron
       - href: Backpropagation.html
         text: Backprop
-      # - href: Hopfield.html
-      #   text: Hopfield
-      # - href: Linear_Algebra.html
-      #   text: Linear Algebra
-      # - href: RNN.html
-      #   text: RNN
-      # - href: LIF.html
-      #   text: LIF
-      # - href: HH.html
-      #   text: HH
+      - href: Hopfield.html
+        text: Hopfield
+      - href: Linear_Algebra.html
+        text: Linear Algebra
+      - href: RNN.html
+        text: RNN
+      - href: LIF.html
+        text: LIF
+      - href: HH.html
+        text: HH
       # - href: Exercise-in-GitHub.html
       #   text: GitHub
       # - href: Theta_Neuron.html

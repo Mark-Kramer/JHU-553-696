@@ -15,7 +15,7 @@ subtitle: "Methods in Computational Neuroscience"
 ## Teams
 - [Rosters](/Slides/teams_1.txt)
 - Skill Demonstration [Rubric](/Slides/Skill_Demonstration_Rubric.pdf)
-- Skill Demonstration [Template TBD]()
+- Skill Demonstration [Template](/Slides/Skill_Demonstration_Template.pptx)
 ---
 
 # Perceptron and Backpropagation
@@ -27,47 +27,35 @@ subtitle: "Methods in Computational Neuroscience"
 - Code:  [Training a Perceptron in Python](Perceptron.html)
 - Code:  [Backpropagation Example](Backpropagation.html)
 
-<!-- # Hopfield
+# Hopfield
 - Read: [Kleinfeld, *Nobel honors for John Hopfield*, Neuron, 2024](/Readings/Kleinfeld_2024.pdf)
 - Read: [Hopfield, *Neural networks and physical systems...*, PNAS, 1982](/Readings/Hopfield_1982.pdf)
-- Lecture Slides: [Hopfield Part 1](/Slides/Hopfield_Lecture_1.pdf), [Linear Algebra Part 1](/Slides/Linear_Algebra_1.pdf), [Hopfield Part 2](/Slides/Hopfield_Lecture_2.pdf)
+- Lecture Slides: [Hopfield Part 1](/Slides/Hopfield_Lecture_1.pdf), [Linear Algebra](/Slides/Linear_Algebra.pdf), [Hopfield Part 2](/Slides/Hopfield_Lecture_2.pdf)
 - Code: [Hopfield Examples](Hopfield.html)
 - Code: [Linear Algebra Examples](Linear_Algebra.html)
 
 # Recurrent Neural Networks
-- Read: [*The Next Frontier Is Inside Your Brain*, NYT, 2013](/Readings/Boffey_NYT_2013.pdf)
-- Read: [*Probing Brain’s Depth, Trying to Aid Memory*, NYT, 2014](/Readings/Carey_NYT_2014.pdf)
-- Read: [*Brace Yourself for the AI Tsunami*, WSJ, 2026](/Readings/Noonan_WSJ_2026.pdf)
-- Read: [*AI Isn’t Coming for Every White-Collar Job. At Least Not Yet*, NYT, 2026](/Readings/Metz_NYT_2026.pdf)
+- Read: [*Pause AI for Humanity’s Sake*, WSJ, 2026](/Readings/Noonan_WSJ_2026.pdf)
+- Read: [*We Need a Science of the AI Mind*, WSJ, 2026](/Readings/Berg_WSJ_2026.pdf)
+- Read: [Kramer, *Brain-inspired, interpretable, resonant recurrent neural networks*, PRR, 2026](https://journals.aps.org/prresearch/abstract/10.1103/phlp-rhny)
 - Lecture Slides: [RNN](/Slides/RNN_Lecture.pdf)
-- Lecture Slides: [Themes So Far](/Slides/Course_Themes.pdf)
 - Code: [RNN Examples](RNN.html)
  
 # Leaky Integrate \& Fire Neuron
 - Read: [Abbott, Brain Res Bull, 1999](/Readings/Abbott_1999.pdf)
 - Read: [Chapter 1, pages 5-12 @ C. Koch, Biophysics of computation, 1998](/Readings/Koch_Chapter_1.pdf)
-- Read: [*Learning How Little We Know About the Brain*, NYT, 2014](/Readings/Gorman_NYT_2014.pdf)
-- Read: [*Relax, the Terminator Is Far Away*, NYT, 2015](/Readings/Markoff_NYT_2015.pdf)
-- Read: [*Barbie Wants to Get to Know Your Child*, NYT, 2015](/Readings/Vlahos_NYT_2015.pdf)
-- Note Taker: [LIF](/Slides/LIF.pdf)
+- Lecture Slides: [LIF](/Slides/LIF_Lecture.pdf)
 - Code:  [LIF in Python](LIF.html)
 
 # Hodgkin-Huxley Neuron
 - Read: [Chapter 2, pages 25-42 @ E. Izhikevich, Dynamical Systems in Neuroscience, 2007.](/Readings/Izhikevich_Chapter_2.pdf)
 - Read: [Hodgkin-Huxley 1-page cheat sheet](/Readings/Hodgkin-Huxley_Cheat_Sheet.pdf)
-- Read: [*A Dying Young Woman’s Hope in Cryonics and a Future*, NYT, 2015](/Readings/Harmon_NYT_2015.pdf)
-- Read: [*The Race Is On to Control Artificial Intelligence, and Tech’s Future*, NYT, 2016](/Readings/Markoff_Lohr_NYT_2016.pdf)
 - Read: [*When Is the Singularity? Probably Not in Your Lifetime*, NYT, 2016](/Readings/Markoff_NYT_2016.pdf)
+- Read: [*Top AI Researchers Call for Urgent Oversight of Self-Improving Systems*, WSJ, 2026](/Readings/Zeff_WSJ_2026.pdf)
 - Lecture Slides: [HH](/Slides/HH_Lecture_1.pdf)
 - Code:  [Hodgkin-Huxley Neuron in Python](HH.html)
 
-# Projects
-- [Project Outline](/Slides/Project_Papers_and_Ideas.pdf)
-- Template Slides: [Check in Template PDF](/Slides/Project_Check_In_Template.pdf), [Check in Template PowerPoint](/Slides/Project_Check_In_Template.pptx)
-- **Grading Rubrics:** [Presentation](/Slides/NE593_Presentation_Rubric.pdf), [GitHub](/Slides/NE593_Github_Rubric.pdf)
-- Code: [GitHub Introduction](Exercise-in-GitHub.html)
-
-# Theta Neuron
+<!-- # Theta Neuron
 - Read: [Wikipedia](https://en.wikipedia.org/wiki/Theta_model) (for much more detail)
 - Read: [*The Great A.I. Awakening*, NYT, 2016](/Readings/Lewis-Kraus_NYT_2016.pdf)
 - Read: [Thwaites et al, *The difficult legacy of Turing’s wager*, J Comp Neuro, 2017](/Readings/Thwaites_2017.pdf)

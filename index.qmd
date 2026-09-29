@@ -47,16 +47,15 @@ subtitle: "Methods in Computational Neuroscience"
 - Lecture Slides: [LIF](/Slides/LIF_Lecture.pdf)
 - Code:  [LIF in Python](LIF.html)
 
-<!-- # Hodgkin-Huxley Neuron
+# Hodgkin-Huxley Neuron
 - Read: [Chapter 2, pages 25-42 @ E. Izhikevich, Dynamical Systems in Neuroscience, 2007.](/Readings/Izhikevich_Chapter_2.pdf)
 - Read: [Hodgkin-Huxley 1-page cheat sheet](/Readings/Hodgkin-Huxley_Cheat_Sheet.pdf)
-- Read: [*A Dying Young Woman’s Hope in Cryonics and a Future*, NYT, 2015](/Readings/Harmon_NYT_2015.pdf)
-- Read: [*The Race Is On to Control Artificial Intelligence, and Tech’s Future*, NYT, 2016](/Readings/Markoff_Lohr_NYT_2016.pdf)
 - Read: [*When Is the Singularity? Probably Not in Your Lifetime*, NYT, 2016](/Readings/Markoff_NYT_2016.pdf)
+- Read: [*Top AI Researchers Call for Urgent Oversight of Self-Improving Systems*, WSJ, 2026](/Readings/Zeff_WSJ_2026.pdf)
 - Lecture Slides: [HH](/Slides/HH_Lecture_1.pdf)
 - Code:  [Hodgkin-Huxley Neuron in Python](HH.html)
 
-# Theta Neuron
+<!-- # Theta Neuron
 - Read: [Wikipedia](https://en.wikipedia.org/wiki/Theta_model) (for much more detail)
 - Read: [*The Great A.I. Awakening*, NYT, 2016](/Readings/Lewis-Kraus_NYT_2016.pdf)
 - Read: [Thwaites et al, *The difficult legacy of Turing’s wager*, J Comp Neuro, 2017](/Readings/Thwaites_2017.pdf)
