@@ -228,7 +228,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"options":{"context":"interactive","autorun":"","dpi":72,"results":"markup","label":"","read-only":"false","warning":"true","message":"true","fig-height":5,"classes":"","out-width":"700px","output":"true","fig-width":7,"comment":"","out-height":"","fig-cap":""},"code":"import numpy as np\nimport matplotlib.pyplot as plt\nimport pandas as pd","id":1},{"options":{"context":"interactive","autorun":"","dpi":72,"results":"markup","label":"","read-only":"false","warning":"true","message":"true","fig-height":5,"classes":"","out-width":"700px","output":"true","fig-width":7,"comment":"","out-height":"","fig-cap":""},"code":"df = pd.read_csv(\"https://raw.githubusercontent.com/Mark-Kramer/BU-MA665-MA666/master/Data/backpropagation_example_data.csv\")\n\n# Extract the variables from the loaded data\nin_true = np.array(df.iloc[:,0])  #Get the values associated with the first column of the dataframe\nout_true = np.array(df.iloc[:,1])  #Get the values associated with the second column of the dataframe","id":2},{"options":{"context":"interactive","autorun":"","dpi":72,"results":"markup","label":"","read-only":"false","warning":"true","message":"true","fig-height":5,"classes":"","out-width":"700px","output":"true","fig-width":7,"comment":"","out-height":"","fig-cap":""},"code":"print(np.transpose([in_true, out_true]))","id":3},{"options":{"context":"interactive","autorun":"","dpi":72,"results":"markup","label":"","read-only":"false","warning":"true","message":"true","fig-height":5,"classes":"","out-width":"700px","output":"true","fig-width":7,"comment":"","out-height":"","fig-cap":""},"code":"def sigmoid(x):\n    # ... # Define the sigmoid anonymous function.\n\ndef feedforward(w, s0):         # Define feedforward solution.\n    # ... x1 = activity of first neuron,\n    # ... s1 = output of first neuron,\n    # ... x2 = activity of second neuron,\n    # ... s2 = output of second neuron,\n    # ... out = output of neural network.\n    return out,s1,s2","id":4},{"options":{"context":"interactive","autorun":"","dpi":72,"results":"markup","label":"","read-only":"false","warning":"true","message":"true","fig-height":5,"classes":"","out-width":"700px","output":"true","fig-width":7,"comment":"","out-height":"","fig-cap":""},"code":"w     = [0.5,0.5]                  # Choose initial values for the weights.\nalpha = 0.01                       # Set the learning constant.\n\nK = np.size(in_true);\nresults = np.zeros([K,3])          # Define a variable to hold the results of each iteration.    \n\nfor k in np.arange(K):\n    s0     = in_true[k]            # Define the input,\n    target = out_true[k]           # ... and the target output.\n    \n    #Calculate feedforward solution to get output.\n    \n    #Update the weights.\n    w0 = w[0]; w1 = w[1];\n    w[1] = \"SOMETHING\"\n    w[0] = \"SOMETHING\"\n    \n    # Save the results of this step. --------------------------------------\n    # Here we save the 3 weights, and the neural network output.\n    error = \"SOMETHING\"\n    results[k,:] = [w[0],w[1], error]\n\n# Plot the weights and error during training \nplt.clf()\nplt.plot(results[:,1], label='w1')\nplt.plot(results[:,0], label='w0')\nplt.plot(results[:,2], label='error')\nplt.legend()                       #Include a legend,\nplt.xlabel('Iteration number');    #... and axis label.\n\n# Print the final weights\nprint(results[-1,0:2])","id":5}];
+globalThis.qpyodideCellDetails = [{"id":1,"options":{"output":"true","message":"true","fig-width":7,"warning":"true","autorun":"","out-height":"","results":"markup","comment":"","out-width":"700px","read-only":"false","fig-cap":"","context":"interactive","label":"","fig-height":5,"classes":"","dpi":72},"code":"import numpy as np\nimport matplotlib.pyplot as plt\nimport pandas as pd"},{"id":2,"options":{"output":"true","message":"true","fig-width":7,"warning":"true","autorun":"","out-height":"","results":"markup","comment":"","out-width":"700px","read-only":"false","fig-cap":"","context":"interactive","label":"","fig-height":5,"classes":"","dpi":72},"code":"df = pd.read_csv(\"https://raw.githubusercontent.com/Mark-Kramer/BU-MA665-MA666/master/Data/backpropagation_example_data.csv\")\n\n# Extract the variables from the loaded data\nin_true = np.array(df.iloc[:,0])  #Get the values associated with the first column of the dataframe\nout_true = np.array(df.iloc[:,1])  #Get the values associated with the second column of the dataframe"},{"id":3,"options":{"output":"true","message":"true","fig-width":7,"warning":"true","autorun":"","out-height":"","results":"markup","comment":"","out-width":"700px","read-only":"false","fig-cap":"","context":"interactive","label":"","fig-height":5,"classes":"","dpi":72},"code":"print(np.transpose([in_true, out_true]))"},{"id":4,"options":{"output":"true","message":"true","fig-width":7,"warning":"true","autorun":"","out-height":"","results":"markup","comment":"","out-width":"700px","read-only":"false","fig-cap":"","context":"interactive","label":"","fig-height":5,"classes":"","dpi":72},"code":"def sigmoid(x):\n    # ... # Define the sigmoid anonymous function.\n\ndef feedforward(w, s0):         # Define feedforward solution.\n    # ... x1 = activity of first neuron,\n    # ... s1 = output of first neuron,\n    # ... x2 = activity of second neuron,\n    # ... s2 = output of second neuron,\n    # ... out = output of neural network.\n    return out,s1,s2"},{"id":5,"options":{"output":"true","message":"true","fig-width":7,"warning":"true","autorun":"","out-height":"","results":"markup","comment":"","out-width":"700px","read-only":"false","fig-cap":"","context":"interactive","label":"","fig-height":5,"classes":"","dpi":72},"code":"w     = [0.5,0.5]                  # Choose initial values for the weights.\nalpha = 0.01                       # Set the learning constant.\n\nK = np.size(in_true);\nresults = np.zeros([K,3])          # Define a variable to hold the results of each iteration.    \n\nfor k in np.arange(K):\n    s0     = in_true[k]            # Define the input,\n    target = out_true[k]           # ... and the target output.\n    \n    #Calculate feedforward solution to get output.\n    \n    #Update the weights.\n    w0 = w[0]; w1 = w[1];\n    w[1] = \"SOMETHING\"\n    w[0] = \"SOMETHING\"\n    \n    # Save the results of this step. --------------------------------------\n    # Here we save the 3 weights, and the neural network output.\n    error = \"SOMETHING\"\n    results[k,:] = [w[0],w[1], error]\n\n# Plot the weights and error during training \nplt.clf()\nplt.plot(results[:,1], label='w1')\nplt.plot(results[:,0], label='w0')\nplt.plot(results[:,2], label='error')\nplt.legend()                       #Include a legend,\nplt.xlabel('Iteration number');    #... and axis label.\n\n# Print the final weights\nprint(results[-1,0:2])"}];
 
 
 </script>
@@ -470,40 +470,24 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./Rhythms_1.html"> 
+<span class="menu-text">Rhythms Intro</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Introduction.html"> 
-<span class="menu-text">Intro</span></a>
+    <a class="nav-link" href="./Analyze_Rhythms_Lab_1.html"> 
+<span class="menu-text">Rhythms Lab 1</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Perceptron.html"> 
-<span class="menu-text">Perceptron</span></a>
+    <a class="nav-link" href="./Analyze_Rhythms_Lab_2a.html"> 
+<span class="menu-text">Rhythms Lab 2a</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./Backpropagation.html" aria-current="page"> 
-<span class="menu-text">Backprop</span></a>
+    <a class="nav-link" href="./Analyze_Rhythms_Lab_2b.html"> 
+<span class="menu-text">Rhythms Lab 2b</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Hopfield.html"> 
-<span class="menu-text">Hopfield</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Linear_Algebra.html"> 
-<span class="menu-text">Linear Algebra</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./RNN.html"> 
-<span class="menu-text">RNN</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./LIF.html"> 
-<span class="menu-text">LIF</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./HH.html"> 
-<span class="menu-text">HH</span></a>
+    <a class="nav-link" href="./Analyze_Rhythms_Lab_3.html"> 
+<span class="menu-text">Rhythms Lab 3</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->

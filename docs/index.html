@@ -89,40 +89,24 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./Rhythms_1.html"> 
+<span class="menu-text">Rhythms Intro</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Introduction.html"> 
-<span class="menu-text">Intro</span></a>
+    <a class="nav-link" href="./Analyze_Rhythms_Lab_1.html"> 
+<span class="menu-text">Rhythms Lab 1</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Perceptron.html"> 
-<span class="menu-text">Perceptron</span></a>
+    <a class="nav-link" href="./Analyze_Rhythms_Lab_2a.html"> 
+<span class="menu-text">Rhythms Lab 2a</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Backpropagation.html"> 
-<span class="menu-text">Backprop</span></a>
+    <a class="nav-link" href="./Analyze_Rhythms_Lab_2b.html"> 
+<span class="menu-text">Rhythms Lab 2b</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Hopfield.html"> 
-<span class="menu-text">Hopfield</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Linear_Algebra.html"> 
-<span class="menu-text">Linear Algebra</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./RNN.html"> 
-<span class="menu-text">RNN</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./LIF.html"> 
-<span class="menu-text">LIF</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./HH.html"> 
-<span class="menu-text">HH</span></a>
+    <a class="nav-link" href="./Analyze_Rhythms_Lab_3.html"> 
+<span class="menu-text">Rhythms Lab 3</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -149,6 +133,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#recurrent-neural-networks" id="toc-recurrent-neural-networks" class="nav-link" data-scroll-target="#recurrent-neural-networks">Recurrent Neural Networks</a></li>
   <li><a href="#leaky-integrate-fire-neuron" id="toc-leaky-integrate-fire-neuron" class="nav-link" data-scroll-target="#leaky-integrate-fire-neuron">Leaky Integrate &amp; Fire Neuron</a></li>
   <li><a href="#hodgkin-huxley-neuron" id="toc-hodgkin-huxley-neuron" class="nav-link" data-scroll-target="#hodgkin-huxley-neuron">Hodgkin-Huxley Neuron</a></li>
+  <li><a href="#introduction-to-rhythms" id="toc-introduction-to-rhythms" class="nav-link" data-scroll-target="#introduction-to-rhythms">Introduction to Rhythms</a></li>
   </ul>
 </nav>
     </div>
@@ -247,38 +232,51 @@ ul.task-list li input[type="checkbox"] {
 <li>Lecture Slides: <a href="./Slides/HH_Lecture_1.pdf">HH</a></li>
 <li>Code: <a href="HH.html">Hodgkin-Huxley Neuron in Python</a></li>
 </ul>
-<!-- # Theta Neuron
-- Read: [Wikipedia](https://en.wikipedia.org/wiki/Theta_model) (for much more detail)
-- Read: [*The Great A.I. Awakening*, NYT, 2016](/Readings/Lewis-Kraus_NYT_2016.pdf)
-- Read: [Thwaites et al, *The difficult legacy of Turing’s wager*, J Comp Neuro, 2017](/Readings/Thwaites_2017.pdf)
-- Note Taker: [Theta Neuron](Slides/Theta_Neuron.pdf)
-- Code: [Theta Neuron](Theta_Neuron.html)
+</section>
+<section id="introduction-to-rhythms" class="level1">
+<h1>Introduction to Rhythms</h1>
+<ul>
+<li>Read: <a href="./Readings/NYT_1976.pdf">Jell-O Test Finds Lifelike Signals, New York Times, 6 March 1976</a></li>
+<li>Read: <a href="./Readings/Buzsaki_Science_2004.pdf">Neuronal Oscillations in Cortical Networks</a></li>
+<li>Lecture <a href="./Slides/Rhythms_1.pdf">Slides</a></li>
+<li>Code: <a href="Rhythms_1.html">Rhythms Introduction</a></li>
+</ul>
+<!--
+# Analyzing Rhythms
+- Read: [Kramer, SFN Short Course Document.](/Readings/Kramer_SFN_Short_Course.pdf)
+- Read: [Chapter 3 @ Kramer & Eden, Case studies in neural data analysis, 2016.](/Readings/Kramer_Eden_Chapter_3.pdf)
+- Read: [Chapter 4 @ Kramer & Eden, Case studies in neural data analysis, 2016.](/Readings/Kramer_Eden_Chapter_4.pdf)
+- **Lecture 1** [Slides](https://github.com/Mark-Kramer/BU-MA665-MA666/blob/master/Slides/Analyzing_Rhythms_Lecture_1.pdf)
+- Lecture Code 1: [Analyze Rhythms Lab 1 - Practicals](Analyzing_Rhythms_Lab_1.html)
+- **Lecture 2** [Slides](https://github.com/Mark-Kramer/BU-MA665-MA666/blob/master/Slides/Analyzing_Rhythms_Lecture_2.pdf)
+- Lecture Code 2a: [Analyze Rhythms Lab 2a - Autocovariance of noise](Analyzing_Rhythms_Lab_2a.html)
+- Lecture Code 2b: [Analyze Rhythms Lab 2b - Autocovariance of data](Analyzing_Rhythms_Lab_2b.html)
+- **Lecture 3** [Slides](https://github.com/Mark-Kramer/BU-MA665-MA666/blob/master/Slides/Analyzing_Rhythms_Lecture_3.pdf)
+- Lecture Code 3: [Analyze Rhythms Lab 3 - Spikes](Analyzing_Rhythms_Lab_3.html)
+- [**Rhythms Challenges**](/Slides/Challenges_Spectra.pdf)
 
-# Gamma rhythms
-- Read: [Chapter 30 (PING) @ Borgers, An Introduction to Modeling Neuronal Dynamics, 2017](/Readings/Borgers_PING_2017.pdf)
-- Read: [Chapter 31 (ING) @ Borgers, An Introduction to Modeling Neuronal Dynamics, 2017](/Readings/Borgers_ING_2017.pdf)
-- Read: [*A Machine May Not Take Your Job, but One Could Become Your Boss*, NYT, 2019](/Readings/Roose_NYT_2019.pdf)
-- Read: [*AI Can Almost Write Like a Human—and More Advances Are Coming*, WSJ, 2020](/Readings/Council_WSJ_2020.pdf)
-- Lecture Slides: [Gamma Rhythms](/Slides/Gamma_Lecture.pdf)
-- Code: [Gamma Lab](Gamma.html)
+### Coherence
+- Read: [Chapter 5 @ Kramer & Eden, Case studies in neural data analysis, 2016.](/Readings/Kramer_Eden_Chapter_5.pdf)
+- Read: [Fries, *A mechanism for cognitive dynamics: neuronal communication through neuronal coherence*, TINS, 2005](/Readings/Fries_TINS_2005.pdf)
+- Extra Read: [Chapter 25 @ M. X. Cohen, Analyzing neural time series data, 2014.](/Readings/Cohen_Chapter_25.pdf)
+- Extra Read: [Chapter 26 @ M. X. Cohen, Analyzing neural time series data, 2014.](/Readings/Cohen_Chapter_26.pdf)
+- Advanced Read: [Lepage et al, *The Dependence of Spike Field Coherence on Expected Intensity*, 2011.](/Readings/Lepage_Neural_Comp_2011.pdf) 
+- **Lecture 1** [Slides](https://github.com/Mark-Kramer/BU-MA665-MA666/blob/master/Slides/Coherence_Lecture_1.pdf)
+- Lecture Code 1: [Coherence Lab 1](Coherence_Lab_Part_1.html)
+- Lecture Code 2: [Coherence Lab 2](Coherence_Lab_Part_2.html)
+- **Lecture 2** [Slides](https://github.com/Mark-Kramer/BU-MA665-MA666/blob/master/Slides/Coherence_Lecture_2.pdf)
+- Lecture Code 3: [Coherence Lab 3](Coherence_Lab_Part_3.html)
+- **Homework (Due 11/20/2025)** [Coherence Homework](https://github.com/Mark-Kramer/BU-MA665-MA666/blob/master/Slides/MA666_Homework_2_Coherence.pdf)
 
-# Beta rhythms
-- Read: [Chapter 33 (Beta) @ Borgers, An Introduction to Modeling Neuronal Dynamics, 2017](/Readings/Borgers_Beta_2017.pdf)
-- Read: [*The False Promise of ChatGPT*, NYT, 2023](/Readings/Chomsky_NYT_2023.pdf)
-- Read: [*The A.I. Disruption We've Been Waiting for Has Arrived*, NYT, 2026](/Readings/Ford_NYT_2026.pdf)
-- Lecture Slides: [Beta Rhythms](Slides/Beta_Lecture.pdf)
-- Code: [Beta Lab](Beta.html)
+### Cross-frequency coupling
+- Read: [Chapter 7 @ Kramer & Eden, Case studies in neural data analysis, 2016.](/Readings/Kramer_Eden_Chapter_8.pdf)
+- Read: [Canolty et al., *High Gamma Power Is Phase-Locked to Theta Oscillations in Human Neocortex*, 2006](Readings/Canolty_2006.pdf)
+- Extra Read: [Tort et al, J Neurophysiol, 2010.](/Readings/Tort_J_Neurophysiol_2010.pdf)
+- Extra Read: [Hyafil et al, Trends Neurosci, 2015.](/Readings/Hyafil_TINS_2015.pdf)
+- **Lecture** [Slides](https://github.com/Mark-Kramer/BU-MA665-MA666/blob/master/Slides/CFC_Lecture.pdf)
+- Lecture Code: [Cross-frequency Coupling Lab](CFC_Lab.html)
+- **Homework (Due 12/04/2025)** [CFC Homework](https://github.com/Mark-Kramer/BU-MA665-MA666/blob/master/Slides/MA666_Homework_3_CFC.pdf)
 
-# Gamma + Beta rhythms
-- Lecture Slides: [Gamma Beta Rhythms](Slides/Gamma_Beta_Lecture.pdf)
-- Code: [Gamma Beta Lab](Gamma_Beta_Lab.html)
-
-- Read: [Kramer et al, *Golden rhythms as a theoretical framework...*, 2022](/Readings/Kramer_2022.pdf)
-- Read: [*Chips Off the Old Block: Computers Are Taking Design Cues From Human Brains*, NYT, 2017](/Readings/Metz_NYT_2017.pdf)
-- Read: [*Artificial Intelligence Hits the Barrier of Meaning*, NYT, 2018](/Readings/Mitchell_NYT_2018.pdf)
-- Read: [*‘The Beginning of a Wave’: A.I. Tiptoes Into the Workplace*, NYT, 2018](/Readings/Lohr_NYT_2018.pdf)
-- Lecture Slides [SHO](SHO.pdf)
-- Code:
 -->
 
 
