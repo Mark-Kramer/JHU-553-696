@@ -30,14 +30,14 @@ website:
       #   text: HH
       - href: Rhythms_1.html
         text: Rhythms Intro
-      - href: Analyze_Rhythms_Lab_1.html
-        text: Rhythms Lab 1
-      - href: Analyze_Rhythms_Lab_2a.html
-        text: Rhythms Lab 2a
-      - href: Analyze_Rhythms_Lab_2b.html
-        text: Rhythms Lab 2b
-      - href: Analyze_Rhythms_Lab_3.html
-        text: Rhythms Lab 3
+      - href: Analyzing_Rhythms_Lab_1.html
+        text: Rhythms Practicals
+      # - href: Analyze_Rhythms_Lab_2a.html
+      #   text: Rhythms Lab 2a
+      # - href: Analyze_Rhythms_Lab_2b.html
+      #   text: Rhythms Lab 2b
+      # - href: Analyze_Rhythms_Lab_3.html
+      #   text: Rhythms Lab 3
       # - href: Gamma.html
       #   text: Gamma
       # - href: Beta.html

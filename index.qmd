@@ -61,19 +61,21 @@ subtitle: "Methods in Computational Neuroscience"
 - Lecture [Slides](/Slides/Rhythms_1.pdf)
 - Code: [Rhythms Introduction](Rhythms_1.html)
 
-<!--
 # Analyzing Rhythms
 - Read: [Kramer, SFN Short Course Document.](/Readings/Kramer_SFN_Short_Course.pdf)
 - Read: [Chapter 3 @ Kramer & Eden, Case studies in neural data analysis, 2016.](/Readings/Kramer_Eden_Chapter_3.pdf)
 - Read: [Chapter 4 @ Kramer & Eden, Case studies in neural data analysis, 2016.](/Readings/Kramer_Eden_Chapter_4.pdf)
-- **Lecture 1** [Slides](https://github.com/Mark-Kramer/BU-MA665-MA666/blob/master/Slides/Analyzing_Rhythms_Lecture_1.pdf)
+- **Lecture 1** [Slides](/Slides/Analyzing_Rhythms_Lecture_1_Practicals.pdf)
 - Lecture Code 1: [Analyze Rhythms Lab 1 - Practicals](Analyzing_Rhythms_Lab_1.html)
+
+<!--
 - **Lecture 2** [Slides](https://github.com/Mark-Kramer/BU-MA665-MA666/blob/master/Slides/Analyzing_Rhythms_Lecture_2.pdf)
 - Lecture Code 2a: [Analyze Rhythms Lab 2a - Autocovariance of noise](Analyzing_Rhythms_Lab_2a.html)
 - Lecture Code 2b: [Analyze Rhythms Lab 2b - Autocovariance of data](Analyzing_Rhythms_Lab_2b.html)
 - **Lecture 3** [Slides](https://github.com/Mark-Kramer/BU-MA665-MA666/blob/master/Slides/Analyzing_Rhythms_Lecture_3.pdf)
 - Lecture Code 3: [Analyze Rhythms Lab 3 - Spikes](Analyzing_Rhythms_Lab_3.html)
-- [**Rhythms Challenges**](/Slides/Challenges_Spectra.pdf)
+- [**Rhythms Challenges**](/Slides/Rhythm_Challenges.pdf)
+
 
 ### Coherence
 - Read: [Chapter 5 @ Kramer & Eden, Case studies in neural data analysis, 2016.](/Readings/Kramer_Eden_Chapter_5.pdf)
