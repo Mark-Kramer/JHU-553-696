@@ -65,9 +65,9 @@ subtitle: "Methods in Computational Neuroscience"
 - Read: [Kramer, SFN Short Course Document.](/Readings/Kramer_SFN_Short_Course.pdf)
 - Read: [Chapter 3 @ Kramer & Eden, Case studies in neural data analysis, 2016.](/Readings/Kramer_Eden_Chapter_3.pdf)
 - Read: [Chapter 4 @ Kramer & Eden, Case studies in neural data analysis, 2016.](/Readings/Kramer_Eden_Chapter_4.pdf)
-- **Lecture 1** [Slides](/Slides/Analyzing_Rhythms_Lecture_1_Practicals.pdf)
+- **Lecture 1** [PDF](/Slides/Analyzing_Rhythms_Lecture_1_Practicals.pdf), [PPTX](Slides/Analyzing_Rhythms_Lecture_1_Practicals.pptx)
 - Lecture Code 1: [Analyze Rhythms Lab 1 - Practicals](Analyzing_Rhythms_Lab_1.html)
-- **Lecture 2** [Slides](Slides/Analyzing_Rhythms_Lecture_2_AC.pdf)
+- **Lecture 2** [PDF](Slides/Analyzing_Rhythms_Lecture_2_AC.pdf), [PPTX](Slides/Analyzing_Rhythms_Lecture_2_AC.pdf)
 - Lecture Code 2a: [Analyze Rhythms Lab 2a - Autocovariance of noise](Analyzing_Rhythms_Lab_2a.html)
 - Lecture Code 2b: [Analyze Rhythms Lab 2b - Autocovariance of data](Analyzing_Rhythms_Lab_2b.html)
 
