@@ -70,13 +70,13 @@ subtitle: "Methods in Computational Neuroscience"
 - **Lecture 2** [PDF](Slides/Analyzing_Rhythms_Lecture_2_AC.pdf), [PPTX](Slides/Analyzing_Rhythms_Lecture_2_AC.pdf)
 - Lecture Code 2a: [Analyze Rhythms Lab 2a - Autocovariance of noise](Analyzing_Rhythms_Lab_2a.html)
 - Lecture Code 2b: [Analyze Rhythms Lab 2b - Autocovariance of data](Analyzing_Rhythms_Lab_2b.html)
-
-<!--
-- **Lecture 3** [Slides](https://github.com/Mark-Kramer/BU-MA665-MA666/blob/master/Slides/Analyzing_Rhythms_Lecture_3.pdf)
+- **Lecture 3** [PDF](Slides/Analyzing_Rhythms_Lecture_3_Spikes.pdf), [PPTX](/Slides/Analyzing_Rhythms_Lecture_3_Spikes.pptx)
 - Lecture Code 3: [Analyze Rhythms Lab 3 - Spikes](Analyzing_Rhythms_Lab_3.html)
 - [**Rhythms Challenges**](/Slides/Rhythm_Challenges.pdf)
 
+**NRP Computational Neuroscience & AI: Student-Led Sessions** [Interest Form](https://forms.gle/5acANXJcVczZQHGs7)
 
+<!--
 ### Coherence
 - Read: [Chapter 5 @ Kramer & Eden, Case studies in neural data analysis, 2016.](/Readings/Kramer_Eden_Chapter_5.pdf)
 - Read: [Fries, *A mechanism for cognitive dynamics: neuronal communication through neuronal coherence*, TINS, 2005](/Readings/Fries_TINS_2005.pdf)
