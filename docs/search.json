@@ -95,21 +95,21 @@
     "href": "Analyzing_Rhythms_Lab_2b.html#load-the-data-and-look-at-it.",
     "title": "Analyzing Rhythms Part 2b (Autocovariance)",
     "section": "Load the data and look at it.",
-    "text": "Load the data and look at it.\nQ. Do you see rhythms?\n\nConclusions\n\n\n\n\n\n# Code to compute the spectrum."
+    "text": "Load the data and look at it.\n\n# Code to visualize the data\n\nQ. Do you see rhythms?\n\nConclusions"
   },
   {
     "objectID": "Analyzing_Rhythms_Lab_2b.html#compute-the-spectrum.",
     "href": "Analyzing_Rhythms_Lab_2b.html#compute-the-spectrum.",
     "title": "Analyzing Rhythms Part 2b (Autocovariance)",
     "section": "Compute the spectrum.",
-    "text": "Compute the spectrum.\nQ. What do you find? What rhythms are present in the data?\n\nConclusions\n\n\n\n\n\n# Code to compute the autocovariance."
+    "text": "Compute the spectrum.\n\n# Code to compute the spectrum.\n\nQ. What do you find? What rhythms are present in the data?\n\nConclusions"
   },
   {
     "objectID": "Analyzing_Rhythms_Lab_2b.html#compute-the-autocovariance.",
     "href": "Analyzing_Rhythms_Lab_2b.html#compute-the-autocovariance.",
     "title": "Analyzing Rhythms Part 2b (Autocovariance)",
     "section": "Compute the autocovariance.",
-    "text": "Compute the autocovariance.\nQ. What do you find? Is it consistent with the spectrum?\n\nConclusions"
+    "text": "Compute the autocovariance.\n\n# Code to compute the autocovariance.\n\nQ. What do you find? Is it consistent with the spectrum?\n\nConclusions"
   },
   {
     "objectID": "Analyzing_Rhythms_Lab_2b.html#example-spectrum-ftautocovariance",

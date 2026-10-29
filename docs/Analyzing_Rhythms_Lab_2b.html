@@ -204,6 +204,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="load-the-data-and-look-at-it." class="level2">
 <h2 class="anchored" data-anchor-id="load-the-data-and-look-at-it.">Load the data and look at it.</h2>
+<div id="cell-4" class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to visualize the data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><strong>Q.</strong> Do you see rhythms?</p>
 <section id="conclusions" class="level3">
 <h3 class="anchored" data-anchor-id="conclusions">Conclusions</h3>
@@ -211,13 +214,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li></li>
 <li></li>
 </ul>
-<div id="cell-4" class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to compute the spectrum.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
 </section>
 <section id="compute-the-spectrum." class="level2">
 <h2 class="anchored" data-anchor-id="compute-the-spectrum.">Compute the spectrum.</h2>
+<div id="cell-7" class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to compute the spectrum.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><strong>Q.</strong> What do you find? What rhythms are present in the data?</p>
 <section id="conclusions-1" class="level3">
 <h3 class="anchored" data-anchor-id="conclusions-1">Conclusions</h3>
@@ -225,13 +228,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li></li>
 <li></li>
 </ul>
-<div id="cell-6" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to compute the autocovariance.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
 </section>
 <section id="compute-the-autocovariance." class="level2">
 <h2 class="anchored" data-anchor-id="compute-the-autocovariance.">Compute the autocovariance.</h2>
+<div id="cell-10" class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code to compute the autocovariance.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><strong>Q.</strong> What do you find? Is it consistent with the spectrum?</p>
 <section id="conclusions-2" class="level3">
 <h3 class="anchored" data-anchor-id="conclusions-2">Conclusions</h3>
@@ -244,37 +247,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example-spectrum-ftautocovariance" class="level2">
 <h2 class="anchored" data-anchor-id="example-spectrum-ftautocovariance">Example: Spectrum = FT{Autocovariance}</h2>
 <p>Make a simple signal.</p>
-<div id="cell-10" class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dt <span class="op">=</span> <span class="fl">0.001</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>N  <span class="op">=</span> <span class="dv">1000</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>t  <span class="op">=</span> np.arange(<span class="dv">0</span>,N)<span class="op">*</span>dt</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>d  <span class="op">=</span> np.sin(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span><span class="dv">10</span><span class="op">*</span>t) <span class="op">+</span> np.random.randn(N)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-14" class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dt <span class="op">=</span> <span class="fl">0.001</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>N  <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>t  <span class="op">=</span> np.arange(<span class="dv">0</span>,N)<span class="op">*</span>dt</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>d  <span class="op">=</span> np.sin(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span><span class="dv">10</span><span class="op">*</span>t) <span class="op">+</span> np.random.randn(N)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Compute the autocovariance with a modifications: circular-shift the data</p>
-<div id="cell-12" class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>rxx <span class="op">=</span> []<span class="op">;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>lags <span class="op">=</span> np.arange(<span class="op">-</span><span class="bu">int</span>(N<span class="op">/</span><span class="dv">2</span>),<span class="bu">int</span>(N<span class="op">/</span><span class="dv">2</span>))<span class="op">;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx,L <span class="kw">in</span> <span class="bu">enumerate</span>(lags):</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    rxx <span class="op">=</span> np.append(rxx, <span class="dv">1</span><span class="op">/</span>N<span class="op">*</span>np.<span class="bu">sum</span>(np.roll(d,L) <span class="op">*</span> d))</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plt.plot(lags, rxx)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Lags [indices]'</span>)<span class="op">;</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Autocovariance rxx'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-16" class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rxx <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>lags <span class="op">=</span> np.arange(<span class="op">-</span><span class="bu">int</span>(N<span class="op">/</span><span class="dv">2</span>),<span class="bu">int</span>(N<span class="op">/</span><span class="dv">2</span>))<span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx,L <span class="kw">in</span> <span class="bu">enumerate</span>(lags):</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    rxx <span class="op">=</span> np.append(rxx, <span class="dv">1</span><span class="op">/</span>N<span class="op">*</span>np.<span class="bu">sum</span>(np.roll(d,L) <span class="op">*</span> d))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.plot(lags, rxx)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Lags [indices]'</span>)<span class="op">;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Autocovariance rxx'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Compute the spectrum via FT and directly from the data.</p>
-<div id="cell-14" class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the spectrum from the FT{rxx}</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Sxx_via_rxx <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>dt<span class="op">*</span>np.fft.fft(rxx)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the spectrum from the data.</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>T   <span class="op">=</span> t[<span class="op">-</span><span class="dv">1</span>]<span class="op">;</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>xf  <span class="op">=</span> np.fft.fft(d)<span class="op">;</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>Sxx <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> dt <span class="op">**</span> <span class="dv">2</span> <span class="op">/</span> T <span class="op">*</span> (xf <span class="op">*</span> xf.conj()) </span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>plt.plot(<span class="dv">10</span><span class="op">*</span>np.log10(Sxx))</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>plt.plot(<span class="dv">10</span><span class="op">*</span>np.log10(Sxx_via_rxx), <span class="st">'o'</span>)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Freq Index'</span>)</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>plt.legend({<span class="st">'Direct Sxx'</span>, <span class="st">'Sxx via rxx'</span>})</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="dv">0</span>,<span class="dv">150</span>])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-18" class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the spectrum from the FT{rxx}</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>Sxx_via_rxx <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>dt<span class="op">*</span>np.fft.fft(rxx)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the spectrum from the data.</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>T   <span class="op">=</span> t[<span class="op">-</span><span class="dv">1</span>]<span class="op">;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>xf  <span class="op">=</span> np.fft.fft(d)<span class="op">;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>Sxx <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> dt <span class="op">**</span> <span class="dv">2</span> <span class="op">/</span> T <span class="op">*</span> (xf <span class="op">*</span> xf.conj()) </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>plt.plot(<span class="dv">10</span><span class="op">*</span>np.log10(Sxx))</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>plt.plot(<span class="dv">10</span><span class="op">*</span>np.log10(Sxx_via_rxx), <span class="st">'o'</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Freq Index'</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>plt.legend({<span class="st">'Direct Sxx'</span>, <span class="st">'Sxx via rxx'</span>})</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="dv">0</span>,<span class="dv">150</span>])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
