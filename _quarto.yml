@@ -8,8 +8,8 @@ render:
 
 website:
   title: "JHU EN.553.696"
-  navbar:
-    left:
+  #navbar:
+  #  left:
       # - href: index.qmd
       #   text: Home
       # - href: Introduction.html
@@ -28,10 +28,10 @@ website:
       #   text: LIF
       # - href: HH.html
       #   text: HH
-      - href: Rhythms_1.html
-        text: Rhythms Intro
-      - href: Analyzing_Rhythms_Lab_1.html
-        text: Rhythms Practicals
+      # - href: Rhythms_1.html
+      #   text: Rhythms Intro
+      # - href: Analyzing_Rhythms_Lab_1.html
+      #   text: Rhythms Practicals
       # - href: Analyze_Rhythms_Lab_2a.html
       #   text: Rhythms Lab 2a
       # - href: Analyze_Rhythms_Lab_2b.html

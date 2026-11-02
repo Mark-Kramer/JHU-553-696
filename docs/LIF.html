@@ -24,7 +24,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -40,11 +39,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -228,7 +227,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"options":{"fig-height":5,"out-width":"700px","warning":"true","read-only":"false","out-height":"","output":"true","context":"interactive","autorun":"","label":"","dpi":72,"comment":"","results":"markup","fig-cap":"","classes":"","fig-width":7,"message":"true"},"code":"import numpy as np\nimport matplotlib.pyplot as plt","id":1},{"options":{"fig-height":5,"out-width":"700px","warning":"true","read-only":"false","out-height":"","output":"true","context":"interactive","autorun":"","label":"","dpi":72,"comment":"","results":"markup","fig-cap":"","classes":"","fig-width":7,"message":"true"},"code":"Vstar=1.0\ntau  =1.0","id":2},{"options":{"fig-height":5,"out-width":"700px","warning":"true","read-only":"false","out-height":"","output":"true","context":"interactive","autorun":"","label":"","dpi":72,"comment":"","results":"markup","fig-cap":"","classes":"","fig-width":7,"message":"true"},"code":"dt=0.01","id":3},{"options":{"fig-height":5,"out-width":"700px","warning":"true","read-only":"false","out-height":"","output":"true","context":"interactive","autorun":"","label":"","dpi":72,"comment":"","results":"markup","fig-cap":"","classes":"","fig-width":7,"message":"true"},"code":"V = np.zeros([1000,1])\nnp.shape(V)","id":4},{"options":{"fig-height":5,"out-width":"700px","warning":"true","read-only":"false","out-height":"","output":"true","context":"interactive","autorun":"","label":"","dpi":72,"comment":"","results":"markup","fig-cap":"","classes":"","fig-width":7,"message":"true"},"code":"V[0]=0.2","id":5},{"options":{"fig-height":5,"out-width":"700px","warning":"true","read-only":"false","out-height":"","output":"true","context":"interactive","autorun":"","label":"","dpi":72,"comment":"","results":"markup","fig-cap":"","classes":"","fig-width":7,"message":"true"},"code":"for k in range(1,999):\n    V[k+1] = V[k] + dt*(\"something\")","id":6},{"options":{"fig-height":5,"out-width":"700px","warning":"true","read-only":"false","out-height":"","output":"true","context":"interactive","autorun":"","label":"","dpi":72,"comment":"","results":"markup","fig-cap":"","classes":"","fig-width":7,"message":"true"},"code":"plt.figure()\nplt.plot(V)\nplt.show()","id":7},{"options":{"fig-height":5,"out-width":"700px","warning":"true","read-only":"false","out-height":"","output":"true","context":"interactive","autorun":"","label":"","dpi":72,"comment":"","results":"markup","fig-cap":"","classes":"","fig-width":7,"message":"true"},"code":"t = np.arange(0,len(V))*dt","id":8},{"options":{"fig-height":5,"out-width":"700px","warning":"true","read-only":"false","out-height":"","output":"true","context":"interactive","autorun":"","label":"","dpi":72,"comment":"","results":"markup","fig-cap":"","classes":"","fig-width":7,"message":"true"},"code":"plt.figure()\nplt.plot(t,V)\nplt.xlabel('Time [s]')\nplt.ylabel('V')\nplt.show()","id":9},{"options":{"fig-height":5,"out-width":"700px","warning":"true","read-only":"false","out-height":"","output":"true","context":"interactive","autorun":"","label":"","dpi":72,"comment":"","results":"markup","fig-cap":"","classes":"","fig-width":7,"message":"true"},"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\nVstar   = 1                           #Set the parameter Vstar.\ntau  = 1                              #Set the parameter tau.\ndt  = 0.01                            #Set the timestep.\nV   = np.zeros([1000,1])              #Initialize V.\nV[0]= 0.2;                            #Set the initial value of V.\n\nfor k in range(1,999):                #March forward in time,\n    V[k+1] = V[k] + dt*(\"something\")  #... updating V along the way.\n\nt = np.arange(0,len(V))*dt            #Define the time axis.\n\nplt.figure()\nplt.plot(t,V)                         #Plot the results.\nplt.xlabel('Time [s]')\nplt.ylabel('Voltage [mV]')\nplt.show()","id":10},{"options":{"fig-height":5,"out-width":"700px","warning":"true","read-only":"false","out-height":"","output":"true","context":"interactive","autorun":"","label":"","dpi":72,"comment":"","results":"markup","fig-cap":"","classes":"","fig-width":7,"message":"true"},"code":"Vth    =  0.75;     #Define the voltage threshold.\nVreset = -1.0;     #Define the reset voltage.\n\nfor k in range(1,999):                #March forward in time,\n    V[k+1] = V[k] + dt*(\"something\")  #... updating V along the way.\n    ### ADD SOMETHING HERE??? --------------------------","id":11},{"options":{"fig-height":5,"out-width":"700px","warning":"true","read-only":"false","out-height":"","output":"true","context":"interactive","autorun":"","label":"","dpi":72,"comment":"","results":"markup","fig-cap":"","classes":"","fig-width":7,"message":"true"},"code":"### ADD YOUR CODE!","id":12}];
+globalThis.qpyodideCellDetails = [{"code":"import numpy as np\nimport matplotlib.pyplot as plt","options":{"read-only":"false","fig-height":5,"output":"true","fig-width":7,"out-height":"","message":"true","fig-cap":"","warning":"true","results":"markup","context":"interactive","dpi":72,"out-width":"700px","autorun":"","classes":"","comment":"","label":""},"id":1},{"code":"Vstar=1.0\ntau  =1.0","options":{"read-only":"false","fig-height":5,"output":"true","fig-width":7,"out-height":"","message":"true","fig-cap":"","warning":"true","results":"markup","context":"interactive","dpi":72,"out-width":"700px","autorun":"","classes":"","comment":"","label":""},"id":2},{"code":"dt=0.01","options":{"read-only":"false","fig-height":5,"output":"true","fig-width":7,"out-height":"","message":"true","fig-cap":"","warning":"true","results":"markup","context":"interactive","dpi":72,"out-width":"700px","autorun":"","classes":"","comment":"","label":""},"id":3},{"code":"V = np.zeros([1000,1])\nnp.shape(V)","options":{"read-only":"false","fig-height":5,"output":"true","fig-width":7,"out-height":"","message":"true","fig-cap":"","warning":"true","results":"markup","context":"interactive","dpi":72,"out-width":"700px","autorun":"","classes":"","comment":"","label":""},"id":4},{"code":"V[0]=0.2","options":{"read-only":"false","fig-height":5,"output":"true","fig-width":7,"out-height":"","message":"true","fig-cap":"","warning":"true","results":"markup","context":"interactive","dpi":72,"out-width":"700px","autorun":"","classes":"","comment":"","label":""},"id":5},{"code":"for k in range(1,999):\n    V[k+1] = V[k] + dt*(\"something\")","options":{"read-only":"false","fig-height":5,"output":"true","fig-width":7,"out-height":"","message":"true","fig-cap":"","warning":"true","results":"markup","context":"interactive","dpi":72,"out-width":"700px","autorun":"","classes":"","comment":"","label":""},"id":6},{"code":"plt.figure()\nplt.plot(V)\nplt.show()","options":{"read-only":"false","fig-height":5,"output":"true","fig-width":7,"out-height":"","message":"true","fig-cap":"","warning":"true","results":"markup","context":"interactive","dpi":72,"out-width":"700px","autorun":"","classes":"","comment":"","label":""},"id":7},{"code":"t = np.arange(0,len(V))*dt","options":{"read-only":"false","fig-height":5,"output":"true","fig-width":7,"out-height":"","message":"true","fig-cap":"","warning":"true","results":"markup","context":"interactive","dpi":72,"out-width":"700px","autorun":"","classes":"","comment":"","label":""},"id":8},{"code":"plt.figure()\nplt.plot(t,V)\nplt.xlabel('Time [s]')\nplt.ylabel('V')\nplt.show()","options":{"read-only":"false","fig-height":5,"output":"true","fig-width":7,"out-height":"","message":"true","fig-cap":"","warning":"true","results":"markup","context":"interactive","dpi":72,"out-width":"700px","autorun":"","classes":"","comment":"","label":""},"id":9},{"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\nVstar   = 1                           #Set the parameter Vstar.\ntau  = 1                              #Set the parameter tau.\ndt  = 0.01                            #Set the timestep.\nV   = np.zeros([1000,1])              #Initialize V.\nV[0]= 0.2;                            #Set the initial value of V.\n\nfor k in range(1,999):                #March forward in time,\n    V[k+1] = V[k] + dt*(\"something\")  #... updating V along the way.\n\nt = np.arange(0,len(V))*dt            #Define the time axis.\n\nplt.figure()\nplt.plot(t,V)                         #Plot the results.\nplt.xlabel('Time [s]')\nplt.ylabel('Voltage [mV]')\nplt.show()","options":{"read-only":"false","fig-height":5,"output":"true","fig-width":7,"out-height":"","message":"true","fig-cap":"","warning":"true","results":"markup","context":"interactive","dpi":72,"out-width":"700px","autorun":"","classes":"","comment":"","label":""},"id":10},{"code":"Vth    =  0.75;     #Define the voltage threshold.\nVreset = -1.0;     #Define the reset voltage.\n\nfor k in range(1,999):                #March forward in time,\n    V[k+1] = V[k] + dt*(\"something\")  #... updating V along the way.\n    ### ADD SOMETHING HERE??? --------------------------","options":{"read-only":"false","fig-height":5,"output":"true","fig-width":7,"out-height":"","message":"true","fig-cap":"","warning":"true","results":"markup","context":"interactive","dpi":72,"out-width":"700px","autorun":"","classes":"","comment":"","label":""},"id":11},{"code":"### ADD YOUR CODE!","options":{"read-only":"false","fig-height":5,"output":"true","fig-width":7,"out-height":"","message":"true","fig-cap":"","warning":"true","results":"markup","context":"interactive","dpi":72,"out-width":"700px","autorun":"","classes":"","comment":"","label":""},"id":12}];
 
 
 </script>
@@ -452,40 +451,11 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">JHU EN.553.696</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./Rhythms_1.html"> 
-<span class="menu-text">Rhythms Intro</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Analyzing_Rhythms_Lab_1.html"> 
-<span class="menu-text">Rhythms Practicals</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">

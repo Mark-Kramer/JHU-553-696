@@ -24,7 +24,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -40,11 +39,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -228,7 +227,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"code":"import numpy as np\nimport matplotlib.pyplot as plt\nimport pandas as pd","options":{"results":"markup","warning":"true","classes":"","dpi":72,"fig-cap":"","output":"true","autorun":"","context":"interactive","label":"","read-only":"false","out-height":"","out-width":"700px","comment":"","fig-width":7,"fig-height":5,"message":"true"},"id":1},{"code":"df = pd.read_csv(\"https://raw.githubusercontent.com/Mark-Kramer/BU-MA665-MA666/master/Data/backpropagation_example_data.csv\")\n\n# Extract the variables from the loaded data\nin_true = np.array(df.iloc[:,0])  #Get the values associated with the first column of the dataframe\nout_true = np.array(df.iloc[:,1])  #Get the values associated with the second column of the dataframe","options":{"results":"markup","warning":"true","classes":"","dpi":72,"fig-cap":"","output":"true","autorun":"","context":"interactive","label":"","read-only":"false","out-height":"","out-width":"700px","comment":"","fig-width":7,"fig-height":5,"message":"true"},"id":2},{"code":"print(np.transpose([in_true, out_true]))","options":{"results":"markup","warning":"true","classes":"","dpi":72,"fig-cap":"","output":"true","autorun":"","context":"interactive","label":"","read-only":"false","out-height":"","out-width":"700px","comment":"","fig-width":7,"fig-height":5,"message":"true"},"id":3},{"code":"def sigmoid(x):\n    # ... # Define the sigmoid anonymous function.\n\ndef feedforward(w, s0):         # Define feedforward solution.\n    # ... x1 = activity of first neuron,\n    # ... s1 = output of first neuron,\n    # ... x2 = activity of second neuron,\n    # ... s2 = output of second neuron,\n    # ... out = output of neural network.\n    return out,s1,s2","options":{"results":"markup","warning":"true","classes":"","dpi":72,"fig-cap":"","output":"true","autorun":"","context":"interactive","label":"","read-only":"false","out-height":"","out-width":"700px","comment":"","fig-width":7,"fig-height":5,"message":"true"},"id":4},{"code":"w     = [0.5,0.5]                  # Choose initial values for the weights.\nalpha = 0.01                       # Set the learning constant.\n\nK = np.size(in_true);\nresults = np.zeros([K,3])          # Define a variable to hold the results of each iteration.    \n\nfor k in np.arange(K):\n    s0     = in_true[k]            # Define the input,\n    target = out_true[k]           # ... and the target output.\n    \n    #Calculate feedforward solution to get output.\n    \n    #Update the weights.\n    w0 = w[0]; w1 = w[1];\n    w[1] = \"SOMETHING\"\n    w[0] = \"SOMETHING\"\n    \n    # Save the results of this step. --------------------------------------\n    # Here we save the 3 weights, and the neural network output.\n    error = \"SOMETHING\"\n    results[k,:] = [w[0],w[1], error]\n\n# Plot the weights and error during training \nplt.clf()\nplt.plot(results[:,1], label='w1')\nplt.plot(results[:,0], label='w0')\nplt.plot(results[:,2], label='error')\nplt.legend()                       #Include a legend,\nplt.xlabel('Iteration number');    #... and axis label.\n\n# Print the final weights\nprint(results[-1,0:2])","options":{"results":"markup","warning":"true","classes":"","dpi":72,"fig-cap":"","output":"true","autorun":"","context":"interactive","label":"","read-only":"false","out-height":"","out-width":"700px","comment":"","fig-width":7,"fig-height":5,"message":"true"},"id":5}];
+globalThis.qpyodideCellDetails = [{"options":{"classes":"","context":"interactive","comment":"","autorun":"","dpi":72,"fig-height":5,"warning":"true","message":"true","read-only":"false","fig-cap":"","out-width":"700px","label":"","output":"true","fig-width":7,"out-height":"","results":"markup"},"code":"import numpy as np\nimport matplotlib.pyplot as plt\nimport pandas as pd","id":1},{"options":{"classes":"","context":"interactive","comment":"","autorun":"","dpi":72,"fig-height":5,"warning":"true","message":"true","read-only":"false","fig-cap":"","out-width":"700px","label":"","output":"true","fig-width":7,"out-height":"","results":"markup"},"code":"df = pd.read_csv(\"https://raw.githubusercontent.com/Mark-Kramer/BU-MA665-MA666/master/Data/backpropagation_example_data.csv\")\n\n# Extract the variables from the loaded data\nin_true = np.array(df.iloc[:,0])  #Get the values associated with the first column of the dataframe\nout_true = np.array(df.iloc[:,1])  #Get the values associated with the second column of the dataframe","id":2},{"options":{"classes":"","context":"interactive","comment":"","autorun":"","dpi":72,"fig-height":5,"warning":"true","message":"true","read-only":"false","fig-cap":"","out-width":"700px","label":"","output":"true","fig-width":7,"out-height":"","results":"markup"},"code":"print(np.transpose([in_true, out_true]))","id":3},{"options":{"classes":"","context":"interactive","comment":"","autorun":"","dpi":72,"fig-height":5,"warning":"true","message":"true","read-only":"false","fig-cap":"","out-width":"700px","label":"","output":"true","fig-width":7,"out-height":"","results":"markup"},"code":"def sigmoid(x):\n    # ... # Define the sigmoid anonymous function.\n\ndef feedforward(w, s0):         # Define feedforward solution.\n    # ... x1 = activity of first neuron,\n    # ... s1 = output of first neuron,\n    # ... x2 = activity of second neuron,\n    # ... s2 = output of second neuron,\n    # ... out = output of neural network.\n    return out,s1,s2","id":4},{"options":{"classes":"","context":"interactive","comment":"","autorun":"","dpi":72,"fig-height":5,"warning":"true","message":"true","read-only":"false","fig-cap":"","out-width":"700px","label":"","output":"true","fig-width":7,"out-height":"","results":"markup"},"code":"w     = [0.5,0.5]                  # Choose initial values for the weights.\nalpha = 0.01                       # Set the learning constant.\n\nK = np.size(in_true);\nresults = np.zeros([K,3])          # Define a variable to hold the results of each iteration.    \n\nfor k in np.arange(K):\n    s0     = in_true[k]            # Define the input,\n    target = out_true[k]           # ... and the target output.\n    \n    #Calculate feedforward solution to get output.\n    \n    #Update the weights.\n    w0 = w[0]; w1 = w[1];\n    w[1] = \"SOMETHING\"\n    w[0] = \"SOMETHING\"\n    \n    # Save the results of this step. --------------------------------------\n    # Here we save the 3 weights, and the neural network output.\n    error = \"SOMETHING\"\n    results[k,:] = [w[0],w[1], error]\n\n# Plot the weights and error during training \nplt.clf()\nplt.plot(results[:,1], label='w1')\nplt.plot(results[:,0], label='w0')\nplt.plot(results[:,2], label='error')\nplt.legend()                       #Include a legend,\nplt.xlabel('Iteration number');    #... and axis label.\n\n# Print the final weights\nprint(results[-1,0:2])","id":5}];
 
 
 </script>
@@ -452,40 +451,11 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">JHU EN.553.696</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./Rhythms_1.html"> 
-<span class="menu-text">Rhythms Intro</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Analyzing_Rhythms_Lab_1.html"> 
-<span class="menu-text">Rhythms Practicals</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">

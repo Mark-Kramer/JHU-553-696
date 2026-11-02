@@ -84,6 +84,13 @@
     "text": "1. Simulate Hopfield network\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2. Pseudoorthogonality\nHere, we’ll use the notation from Kleinfeld 2024.\nConsider two random patterns, \\(\\xi\\) and \\(S\\), multiply them, and sum.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nRepeat the product of \\(\\xi\\) and \\(S\\), both random, K times.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nRepeat the product of \\(\\xi\\) and \\(S\\), where \\(S\\) is similar to \\(\\xi\\), K times.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n3. Find the pattern\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nChallenges\n\nPlease look at Figure 1A and 1B in the reading (Kleinfeld, Nobel honors for John Hopfield, Neuron, 2024). Figure 1A and 1B are the motivation for this problem, where the goal is to simulate something like it. To do so, first create a two-dimensional image of your choosing. Give each pixel in your image the value 0 or 1 (i.e., so it’s a black and white image). Then, store this image in the Hopfield network (by setting \\(T_{ij}\\)). Show that, if you start with an image near your stored two-dimensional image, then as the dynamics evolve in the Hopfield model, the pattern approaches the stored image.\nWe did not talk about the energy function for the Hopfield model in class. Please look at Figure 1C in the reading (Kleinfeld, Nobel honors for John Hopfield, Neuron, 2024). Figure 1C is the motivation for this problem. Update your result from Problem 1 to include the energy function. See page 3821 of the article for the equation. Plot the energy as a function of the update number (as in Figure 1C). Show that the energy decreases as the initial pattern approaches the stored pattern."
   },
   {
+    "objectID": "Analyzing_Rhythms_Lab_2a.html",
+    "href": "Analyzing_Rhythms_Lab_2a.html",
+    "title": "Analyzing Rhythms Part 2a (Autocovariance)",
+    "section": "",
+    "text": "Load modules we’ll need.\n\nfrom scipy.io import loadmat\nimport matplotlib.pyplot as plt\nimport numpy as np\nfrom scipy.signal import spectrogram\n\n\n\nMake the noise signal.\n\nN = 1000;\ndt= 0.001;\nT = \"SOMETHING\"\nx = \"SOMETHING\"\nt = \"SOMETHING\"\n\nplt.plot(t,x)\nplt.xlabel('Time [s]');\n\n\n\nCompute the auto-covariance.\n\nac_xx = \"SOMETHING\"\nlags  = \"SOMETHING\"                  # Create a lag axis,\nplt.plot(lags, ac_xx)                # ... and plot the result.\nplt.xlabel('Lag [s]')\nplt.ylabel('Autocovariance');\n\n\n\nCompute the spectrum.\n\nXf = np.fft.fft(x - x.mean())           # Compute Fourier transform of x\n\n# Compute the spectrum\nSxx = \"SOMETHING\"\n\n# Define a frequency axis.\nf = np.fft.fftfreq(N, dt)\n\n# Plot the result.\nplt.plot(f, Sxx)"
+  },
+  {
     "objectID": "Analyzing_Rhythms_Lab_2b.html",
     "href": "Analyzing_Rhythms_Lab_2b.html",
     "title": "Analyzing Rhythms Part 2b (Autocovariance)",
@@ -119,11 +126,74 @@
     "text": "Example: Spectrum = FT{Autocovariance}\nMake a simple signal.\n\ndt = 0.001\nN  = 1000\nt  = np.arange(0,N)*dt\nd  = np.sin(2*np.pi*10*t) + np.random.randn(N)\n\nCompute the autocovariance with a modifications: circular-shift the data\n\nrxx = [];\nlags = np.arange(-int(N/2),int(N/2));\nfor idx,L in enumerate(lags):\n    rxx = np.append(rxx, 1/N*np.sum(np.roll(d,L) * d))\nplt.plot(lags, rxx)\nplt.xlabel('Lags [indices]');\nplt.ylabel('Autocovariance rxx');\n\nCompute the spectrum via FT and directly from the data.\n\n# Compute the spectrum from the FT{rxx}\nSxx_via_rxx = 2*dt*np.fft.fft(rxx)\n\n# Compute the spectrum from the data.\nT   = t[-1];\nxf  = np.fft.fft(d);\nSxx = 2 * dt ** 2 / T * (xf * xf.conj()) \n\nplt.plot(10*np.log10(Sxx))\nplt.plot(10*np.log10(Sxx_via_rxx), 'o')\nplt.xlabel('Freq Index')\nplt.legend({'Direct Sxx', 'Sxx via rxx'})\nplt.xlim([0,150]);"
   },
   {
-    "objectID": "Analyzing_Rhythms_Lab_2a.html",
-    "href": "Analyzing_Rhythms_Lab_2a.html",
-    "title": "Analyzing Rhythms Part 2a (Autocovariance)",
+    "objectID": "Coherence_Lab_Part_2.html",
+    "href": "Coherence_Lab_Part_2.html",
+    "title": "Coherence Part 2 (Two noise signals, again)",
     "section": "",
-    "text": "Load modules we’ll need.\n\nfrom scipy.io import loadmat\nimport matplotlib.pyplot as plt\nimport numpy as np\nfrom scipy.signal import spectrogram\n\n\n\nMake the noise signal.\n\nN = 1000;\ndt= 0.001;\nT = \"SOMETHING\"\nx = \"SOMETHING\"\nt = \"SOMETHING\"\n\nplt.plot(t,x)\nplt.xlabel('Time [s]');\n\n\n\nCompute the auto-covariance.\n\nac_xx = \"SOMETHING\"\nlags  = \"SOMETHING\"                  # Create a lag axis,\nplt.plot(lags, ac_xx)                # ... and plot the result.\nplt.xlabel('Lag [s]')\nplt.ylabel('Autocovariance');\n\n\n\nCompute the spectrum.\n\nXf = np.fft.fft(x - x.mean())           # Compute Fourier transform of x\n\n# Compute the spectrum\nSxx = \"SOMETHING\"\n\n# Define a frequency axis.\nf = np.fft.fftfreq(N, dt)\n\n# Plot the result.\nplt.plot(f, Sxx)"
+    "text": "# Load modules we'll need.\n\nfrom scipy.io import loadmat\nimport matplotlib.pyplot as plt\nimport numpy as np\nfrom scipy.signal import spectrogram"
+  },
+  {
+    "objectID": "Coherence_Lab_Part_2.html#make-two-noise-signals-with-multiple-trials",
+    "href": "Coherence_Lab_Part_2.html#make-two-noise-signals-with-multiple-trials",
+    "title": "Coherence Part 2 (Two noise signals, again)",
+    "section": "Make two noise signals, with multiple trials",
+    "text": "Make two noise signals, with multiple trials\n\nN = 1000;\nK = 100;\ndt= 0.001;\nT = N*dt;\nx = np.random.randn(K,N)\ny = np.random.randn(K,N)\nt = np.arange(0,N)*dt\n\nplt.plot(t,x[0,:])\nplt.plot(t,y[0,:])\nplt.xlabel('Time [s]');"
+  },
+  {
+    "objectID": "Coherence_Lab_Part_2.html#visualize-the-data-across-all-trials",
+    "href": "Coherence_Lab_Part_2.html#visualize-the-data-across-all-trials",
+    "title": "Coherence Part 2 (Two noise signals, again)",
+    "section": "Visualize the data across all trials",
+    "text": "Visualize the data across all trials\n\nplt.imshow(x,                             # ... and show the image,\n           extent=[min(t), max(t), K, 1],  # ... with meaningful axes,\n           aspect='auto')                  # ... and a nice aspect ratio\nplt.xlabel('Time [s]')\nplt.ylabel('Trial #');\nplt.title('All trials from E1');"
+  },
+  {
+    "objectID": "Coherence_Lab_Part_2.html#compute-the-cross-covariance-averaged-across-trials",
+    "href": "Coherence_Lab_Part_2.html#compute-the-cross-covariance-averaged-across-trials",
+    "title": "Coherence Part 2 (Two noise signals, again)",
+    "section": "Compute the cross-covariance, averaged across trials",
+    "text": "Compute the cross-covariance, averaged across trials\n\ncc_xy = \"SOMETHING\"                          # Compute cc for each trial, \ncc_xy = np.mean(cc_xy,0)                     # ... average over trials,\nlags = np.arange(-N + 1, N)                  # ... create a lag axis,\nplt.plot(lags * dt, cc_xy)                   # ... and plot the result.\nplt.xlabel('Lag [s]')\nplt.ylabel('Trial averaged cross-covariance');\nplt.ylim([-0.1, 1]);"
+  },
+  {
+    "objectID": "Coherence_Lab_Part_2.html#compute-the-coherence",
+    "href": "Coherence_Lab_Part_2.html#compute-the-coherence",
+    "title": "Coherence Part 2 (Two noise signals, again)",
+    "section": "Compute the coherence",
+    "text": "Compute the coherence\n\n# Fourier transforms.\nXf = \"SOMETHING\"  # Compute Fourier transform of x for each trial\nYf = \"SOMETHING\"  # Compute Fourier transform of y for each trial\n\n# Auto- and cross-spectra.\nSxx = \"SOMETHING\"  # Spectrum of x trials\nSyy = \"SOMETHING\"  # ... and y trials\nSxy = \"SOMETHING\"  # ... and the cross spectrum\n\n# Trial average.\nSxx = np.mean(Sxx,0)\nSyy = np.mean(Syy,0)\nSxy = np.mean(Sxy,0)\n\n# Calculate coherence.\ncohr = \"SOMETHING\"\n\nf = np.fft.fftfreq(N, dt)               # Define a frequency axis.\nplt.plot(f, cohr.real)                  # Plot the coherence.\nplt.ylim([0, 1.1])                      # ... with y-axis scaled,\nplt.xlabel('Frequency [Hz]')            # ... and with axes labeled.\nplt.ylabel('Coherence')\nplt.title('Trial averaged coherence between two electrodes');"
+  },
+  {
+    "objectID": "Coherence_Lab_Part_3.html",
+    "href": "Coherence_Lab_Part_3.html",
+    "title": "Coherence Part 3 (spike-field coherence)",
+    "section": "",
+    "text": "Dependence on rate (Part 1)\n\nimport scipy.io as io\nimport scipy.signal as signal\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n\n# Load the data and plot it.\ndata = io.loadmat('Data/spikes-LFP-1.mat')   # Load the multiscale data,\ny = data['y']                                # ... get the LFP data,\nn = data['n']                                # ... get the spike data,\nt = data['t'].reshape(-1)                    # ... get the time axis,\nK = np.shape(n)[0]                           # Get the number of trials,\nN = np.shape(n)[1]                           # ... and the number of data points in each trial,\ndt = t[1]-t[0]                               # Get the sampling interval.\n\nplt.stem(t,n[0,:]);\nplt.xlabel('Time [s]');\n\n\nFor convenience, make a function to compute the cohernece.\n\ndef coherence(n,y,t):                           #INPUT (spikes, fields, time)\n    K = np.shape(n)[0]                          #... where spikes and fields are arrays [trials, time]\n    N = np.shape(n)[1]\n    T = t[-1]\n    SYY = np.zeros(int(N/2+1))\n    SNN = np.zeros(int(N/2+1))\n    SYN = np.zeros(int(N/2+1), dtype=complex)\n    \n    for k in np.arange(K):\n        yf = np.fft.rfft((y[k,:]-np.mean(y[k,:])))                   # FT of fields\n        nf = np.fft.rfft((n[k,:]-np.mean(n[k,:])))                   # FT of spikes\n        SYY = SYY + ( np.real( yf*np.conj(yf) ) )/K                  # Field spectrum\n        SNN = SNN + ( np.real( nf*np.conj(nf) ) )/K                  # Spike spectrum\n        SYN = SYN + (          yf*np.conj(nf)   )/K                  # Cross spectrum\n\n    cohr = np.abs(SYN) / np.sqrt(SYY) / np.sqrt(SNN)                 # Coherence\n    f = np.fft.rfftfreq(N, dt)                                       # Frequency axis for plotting\n    \n    return (cohr, f, SYY, SNN, SYN)\n\nLet’s try it:\n\n[cohr, f, SYY, SNN, SYN] = coherence(n,y,t)\nplt.plot(f,cohr)\nplt.xlim([0, 100]); plt.xlabel('Frequency [Hz]'); plt.ylabel('Coherence');\n\n\n\nMake a function to thin a spike train.\n\ndef thinned_spike_train(n, thinning_factor):              # Thin the spike train (n) by the thinning_factor.\n    n_thinned = np.copy(n)                                # Make a copy of the spike train data.\n    for k in np.arange(K):                                # For each trial,\n        spike_times = np.where(n[k,:]==1)                 # ...find the spikes.\n        n_spikes = np.size(spike_times)                   # ...determine number of spikes.\n        spike_times_random = spike_times[0][np.random.permutation(n_spikes)]    # ...permute spikes indices,\n        n_remove=int(np.floor(thinning_factor*n_spikes))  # ... determine number of spikes to remove,\n        n_thinned[k,spike_times_random[1:n_remove]]=0     # remove the spikes.\n    return n_thinned\n\nLet’s try it:\n\nplt.clf()\nplt.stem(t, n[0,:], 'k')\nplt.stem(t, thinned_spike_train(n,0.5)[0,:], 'r');\nplt.xlim([0.2, 0.3])\nplt.legend(['Original', 'Thinned']);\n\n\n\nCompare the spike-field coherence for original and thinned data.\n\n[cohr, f, SYY, SNN, SYN] = \"SOMETHING\"  # Coherence for original spike train.\nplt.clf()\nplt.plot(f,cohr, 'b')\n[cohr, f, SYY, SNN, SYN] = \"SOMETHING\"  # ... and for the thinned spike train.\nplt.plot(f,cohr, 'r')\nplt.xlim([40, 50])\nplt.legend(['Original', 'Thinned'])\nplt.xlabel('Frequency [Hz]')\nplt.ylabel('Coherence');\n\n\n\nRepeat for different thinning factors.\n\nplt.figure();\nfor thin_factor in \"SOMETHING\n    thinned = \"SOMETHING\"                  # Make the thinned spike train\n    [cohr, f, SYY, SNN, SYN] =\"SOMETHING\"  # ... and compute the coherence\n    plt.plot(f,cohr,label=str(thin_factor))    # \n\nplt.xlim([40, 50])\nplt.legend()\nplt.xlabel('Frequency [Hz]')\nplt.ylabel('Coherence');\n\n\n\n\n\nDependence on rate (Part 2)\n\nSimulate two simple spiking neurons, with activity dependent on a field.\n\ndef sim_two_neurons(baseline_rate_A, baseline_rate_B, field_coupling_A, field_coupling_B):\n    K = 100                            # Number of trials.\n    N = 1000                           # Points per trial.\n    A = np.zeros([K,N])                # Array to hold spikes A.\n    B = np.zeros([K,N])                # Array to hold spikes B.\n    y = np.zeros([K,N])                # Array to hold field.\n    for k in np.arange(K):             # For each trial,\n        y[k,:] = np.sin(2*np.pi*t*10) + 0.1*np.random.randn(N)    # ... generate a field,\n        A[k,:] = np.random.binomial(1,0.001*np.exp(baseline_rate_A+field_coupling_A*y[k,:]))      # ... generate spikes #A that may depend on the field,\n        B[k,:] = np.random.binomial(1,0.001*np.exp(baseline_rate_B+field_coupling_B*y[k,:]))      # ... generate spikes #B that may depend on the field.\n    return A,B,y\n\n\n\nVisualize example trials.\n\nplt.clf()\nrate_A = 1.0;  coupling_A = 1             # Fix the rates and coupling to field for each neuron.\nrate_B = 0.5;  coupling_B = 1             # Simulate the two neurons.\nA,B,y = sim_two_neurons(rate_A, rate_B, coupling_A, coupling_B)\nn_trial = 0;                              # Select a trial to plot.\nplt.plot(t,A[n_trial,:])\nplt.plot(t,B[n_trial,:])\nplt.plot(t,y[n_trial,:])\nplt.legend([\"Neuron A\", \"Neuron B\", \"Field\"]);\n\n\n\nCompute the average rate of each neuron\n\nrateA = np.mean(sum(A,1)/t[-1])\nrateB = np.mean(sum(B,1)/t[-1])\n\nprint(\"A(Rate) = \", rateA, \", B(Rate) = \", rateB)\n\n\n\nCompute the spike-field coherence.\n\nplt.clf()\n\n[cohr, f, SYY, SNN, SYN] = coherence(A,y,t); plt.plot(f,cohr)\n\n[cohr, f, SYY, SNN, SYN] = coherence(B,y,t); plt.plot(f,cohr)\n\nplt.xlim([0,20])\nplt.ylim([0,1])\nplt.legend(['Neuron A', 'Neuron B'])\nplt.xlabel('Frequency [Hz]')\nplt.ylabel('Coherence');\n\n\n\nRepeat coherence calculation for many realizations\n\nbaseline_A = 1.0;  coupling_A = 1.0   # Fix the rates and coupling to field for each neuron.\nbaseline_B = 0.5;  coupling_B = 1.0\ncohr_A = np.zeros([501,100])\ncohr_B = np.zeros([501,100])\nfor k in np.arange(100):              # For 100 realizations, simulate the neurons & compute coherence.\n    A,B,y = sim_two_neurons(baseline_A, baseline_B, coupling_A, coupling_B)\n    [cohr, f, SYY, SNN, SYN] = coherence(A,y,t); cohr_A[:,k] = cohr\n    [cohr, f, SYY, SNN, SYN] = coherence(B,y,t); cohr_B[:,k] = cohr\n\n\n# Plot the coherence results.\nplt.clf()\nmn = np.mean(cohr_A,1); se = np.std( cohr_A,1)/np.sqrt(np.shape(cohr_A)[1])\nplt.plot(f,mn,'b',label=\"Neuron A\"); plt.plot(f,mn-2*se, 'b:'); plt.plot(f,mn+2*se, 'b:');\nmn = np.mean(cohr_B,1); se = np.std( cohr_B,1)/np.sqrt(np.shape(cohr_B)[1])\nplt.plot(f,mn,'r',label=\"Neuron B\"); plt.plot(f,mn-2*se, 'r:'); plt.plot(f,mn+2*se, 'r:');\nplt.xlim([5,15]); plt.ylim([0,1]);\nplt.legend()\nplt.xlabel('Frequency [Hz]')\nplt.ylabel('Coherence');\nplt.title('Neuron A Rate: Baseline=' + str(baseline_A) + ', Coupling=' + str(coupling_A) + '\\n'\n          'Neuron B Rate: Baseline=' + str(baseline_B) + ', Coupling=' + str(coupling_B));"
+  },
+  {
+    "objectID": "Coherence_Lab_Part_1.html",
+    "href": "Coherence_Lab_Part_1.html",
+    "title": "Coherence Part 1 (Two noise signals)",
+    "section": "",
+    "text": "# Load modules we'll need.\nfrom scipy.io import loadmat\nimport matplotlib.pyplot as plt\nimport numpy as np\nfrom scipy.signal import spectrogram"
+  },
+  {
+    "objectID": "Coherence_Lab_Part_1.html#make-two-noise-signals",
+    "href": "Coherence_Lab_Part_1.html#make-two-noise-signals",
+    "title": "Coherence Part 1 (Two noise signals)",
+    "section": "Make two noise signals",
+    "text": "Make two noise signals\n\nN = 1000;\ndt= 0.001;\nT = N*dt;\nx = np.random.randn(N)\ny = np.random.randn(N)\nt = np.arange(0,N)*dt\n\nplt.plot(t,x)\nplt.plot(t,y)\nplt.xlabel('Time [s]');"
+  },
+  {
+    "objectID": "Coherence_Lab_Part_1.html#compute-the-cross-covariance",
+    "href": "Coherence_Lab_Part_1.html#compute-the-cross-covariance",
+    "title": "Coherence Part 1 (Two noise signals)",
+    "section": "Compute the cross-covariance",
+    "text": "Compute the cross-covariance\n\ncc_xy = \"SOMETHING\"                          # Compute the covariance.\nlags = np.arange(-N + 1, N)                  # Create a lag axis,\nplt.plot(lags * dt, cc_xy)                   # ... and plot the result.\nplt.ylim([-0.1, 1])\nplt.xlabel('Lag [s]')\nplt.ylabel('Cross-covariance');"
+  },
+  {
+    "objectID": "Coherence_Lab_Part_1.html#compute-the-coherence",
+    "href": "Coherence_Lab_Part_1.html#compute-the-coherence",
+    "title": "Coherence Part 1 (Two noise signals)",
+    "section": "Compute the coherence",
+    "text": "Compute the coherence\n\nXf = np.fft.fft(x - x.mean())           # Compute Fourier transform of x\nYf = np.fft.fft(y - y.mean())           # Compute Fourier transform of y\n\n# Compute the spectra\nSxx = \"SOMETHING\"  # Spectrum of x\nSyy = \"SOMETHING\"  # ... and y\nSxy = \"SOMETHING\"  # ... and the cross spectrum\n\n# Compute the coherence.\ncohr = \"SOMETHING\"\n\n# Define a frequency axis.\nf = np.fft.fftfreq(N, dt)\n\n# Plot the result.\nplt.plot(f, cohr.real)"
   },
   {
     "objectID": "Analyzing_Rhythms_Lab_3.html",

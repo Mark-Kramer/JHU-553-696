@@ -24,7 +24,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -40,11 +39,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -71,40 +70,11 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">JHU EN.553.696</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./Rhythms_1.html"> 
-<span class="menu-text">Rhythms Intro</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Analyzing_Rhythms_Lab_1.html"> 
-<span class="menu-text">Rhythms Practicals</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -123,6 +93,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#hodgkin-huxley-neuron" id="toc-hodgkin-huxley-neuron" class="nav-link" data-scroll-target="#hodgkin-huxley-neuron">Hodgkin-Huxley Neuron</a></li>
   <li><a href="#introduction-to-rhythms" id="toc-introduction-to-rhythms" class="nav-link" data-scroll-target="#introduction-to-rhythms">Introduction to Rhythms</a></li>
   <li><a href="#analyzing-rhythms" id="toc-analyzing-rhythms" class="nav-link" data-scroll-target="#analyzing-rhythms">Analyzing Rhythms</a></li>
+  <li><a href="#coherence" id="toc-coherence" class="nav-link" data-scroll-target="#coherence">Coherence</a></li>
   </ul>
 </nav>
     </div>
@@ -239,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Read: <a href="./Readings/Kramer_Eden_Chapter_4.pdf">Chapter 4 @ Kramer &amp; Eden, Case studies in neural data analysis, 2016.</a></li>
 <li><strong>Lecture 1</strong> <a href="./Slides/Analyzing_Rhythms_Lecture_1_Practicals.pdf">PDF</a>, <a href="Slides/Analyzing_Rhythms_Lecture_1_Practicals.pptx">PPTX</a></li>
 <li>Lecture Code 1: <a href="Analyzing_Rhythms_Lab_1.html">Analyze Rhythms Lab 1 - Practicals</a></li>
-<li><strong>Lecture 2</strong> <a href="Slides/Analyzing_Rhythms_Lecture_2_AC.pdf">PDF</a>, <a href="Slides/Analyzing_Rhythms_Lecture_2_AC.pdf">PPTX</a></li>
+<li><strong>Lecture 2</strong> <a href="Slides/Analyzing_Rhythms_Lecture_2_AC.pdf">PDF</a>, <a href="Slides/Analyzing_Rhythms_Lecture_2_AC.pptx">PPTX</a></li>
 <li>Lecture Code 2a: <a href="Analyzing_Rhythms_Lab_2a.html">Analyze Rhythms Lab 2a - Autocovariance of noise</a></li>
 <li>Lecture Code 2b: <a href="Analyzing_Rhythms_Lab_2b.html">Analyze Rhythms Lab 2b - Autocovariance of data</a></li>
 <li><strong>Lecture 3</strong> <a href="Slides/Analyzing_Rhythms_Lecture_3_Spikes.pdf">PDF</a>, <a href="./Slides/Analyzing_Rhythms_Lecture_3_Spikes.pptx">PPTX</a></li>
@@ -247,19 +218,24 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="./Slides/Rhythm_Challenges.pdf"><strong>Rhythms Challenges</strong></a></li>
 </ul>
 <p><strong>NRP Computational Neuroscience &amp; AI: Student-Led Sessions</strong> <a href="https://forms.gle/5acANXJcVczZQHGs7">Interest Form</a></p>
+</section>
+<section id="coherence" class="level1">
+<h1>Coherence</h1>
+<ul>
+<li>Read: <a href="./Readings/Kramer_Eden_Chapter_5.pdf">Chapter 5 @ Kramer &amp; Eden, Case studies in neural data analysis, 2016.</a></li>
+<li>Read: <a href="./Readings/Fries_TINS_2005.pdf">Fries, <em>A mechanism for cognitive dynamics</em>, TINS, 2005</a></li>
+<li>Extra Read: <a href="./Readings/Cohen_Chapter_25.pdf">Chapter 25 @ M. X. Cohen, Analyzing&nbsp;neural&nbsp;time&nbsp;series&nbsp;data, 2014.</a></li>
+<li>Extra Read: <a href="./Readings/Cohen_Chapter_26.pdf">Chapter 26 @ M. X. Cohen, Analyzing&nbsp;neural&nbsp;time&nbsp;series&nbsp;data, 2014.</a></li>
+<li>Advanced Read: <a href="./Readings/Lepage_Neural_Comp_2011.pdf">Lepage et al, <em>The Dependence of Spike Field Coherence on Expected Intensity</em>, 2011.</a></li>
+<li><strong>Lecture 1</strong> <a href="Slides/Coherence_Lecture_1.pdf">PDF</a>, <a href="Slides/Coherence_Lecture_1.pptx">PPTX</a></li>
+<li>Lecture Code 1: <a href="Coherence_Lab_Part_1.html">Coherence Lab 1</a></li>
+</ul>
 <!--
-### Coherence
-- Read: [Chapter 5 @ Kramer & Eden, Case studies in neural data analysis, 2016.](/Readings/Kramer_Eden_Chapter_5.pdf)
-- Read: [Fries, *A mechanism for cognitive dynamics: neuronal communication through neuronal coherence*, TINS, 2005](/Readings/Fries_TINS_2005.pdf)
-- Extra Read: [Chapter 25 @ M. X. Cohen, Analyzing neural time series data, 2014.](/Readings/Cohen_Chapter_25.pdf)
-- Extra Read: [Chapter 26 @ M. X. Cohen, Analyzing neural time series data, 2014.](/Readings/Cohen_Chapter_26.pdf)
-- Advanced Read: [Lepage et al, *The Dependence of Spike Field Coherence on Expected Intensity*, 2011.](/Readings/Lepage_Neural_Comp_2011.pdf) 
-- **Lecture 1** [Slides](https://github.com/Mark-Kramer/BU-MA665-MA666/blob/master/Slides/Coherence_Lecture_1.pdf)
-- Lecture Code 1: [Coherence Lab 1](Coherence_Lab_Part_1.html)
 - Lecture Code 2: [Coherence Lab 2](Coherence_Lab_Part_2.html)
-- **Lecture 2** [Slides](https://github.com/Mark-Kramer/BU-MA665-MA666/blob/master/Slides/Coherence_Lecture_2.pdf)
+- **Lecture 2** [PDF](Slides/Coherence_Lecture_2.pdf), [PPTX](Slides/Coherence_Lecture_2.pptx)
 - Lecture Code 3: [Coherence Lab 3](Coherence_Lab_Part_3.html)
-- **Homework (Due 11/20/2025)** [Coherence Homework](https://github.com/Mark-Kramer/BU-MA665-MA666/blob/master/Slides/MA666_Homework_2_Coherence.pdf)
+- [**Coherence Challenges**](Slides/Coherence_Challenges.pdf)
+
 
 ### Cross-frequency coupling
 - Read: [Chapter 7 @ Kramer & Eden, Case studies in neural data analysis, 2016.](/Readings/Kramer_Eden_Chapter_8.pdf)

@@ -24,7 +24,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -40,11 +39,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -228,7 +227,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"id":1,"options":{"classes":"","message":"true","label":"","dpi":72,"read-only":"false","fig-width":7,"output":"true","results":"markup","fig-cap":"","comment":"","out-width":"700px","autorun":"","warning":"true","context":"interactive","fig-height":5,"out-height":""},"code":"# Load modules\nimport scipy.io as sio\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt"},{"id":2,"options":{"classes":"","message":"true","label":"","dpi":72,"read-only":"false","fig-width":7,"output":"true","results":"markup","fig-cap":"","comment":"","out-width":"700px","autorun":"","warning":"true","context":"interactive","fig-height":5,"out-height":""},"code":"t = np.arange(0, 2, 0.001)"},{"id":3,"options":{"classes":"","message":"true","label":"","dpi":72,"read-only":"false","fig-width":7,"output":"true","results":"markup","fig-cap":"","comment":"","out-width":"700px","autorun":"","warning":"true","context":"interactive","fig-height":5,"out-height":""},"code":"x = np.sin(2*np.pi*t)"},{"id":4,"options":{"classes":"","message":"true","label":"","dpi":72,"read-only":"false","fig-width":7,"output":"true","results":"markup","fig-cap":"","comment":"","out-width":"700px","autorun":"","warning":"true","context":"interactive","fig-height":5,"out-height":""},"code":"f1 = 10;\nx1 = np.cos(2*np.pi*t*f1);\n\nf2 = 2;\nx2 = np.cos(2*np.pi*t*f2);"},{"id":5,"options":{"classes":"","message":"true","label":"","dpi":72,"read-only":"false","fig-width":7,"output":"true","results":"markup","fig-cap":"","comment":"","out-width":"700px","autorun":"","warning":"true","context":"interactive","fig-height":5,"out-height":""},"code":"df = pd.read_csv(\"https://raw.githubusercontent.com/Mark-Kramer/BU-MA665-MA666/master/Data/Rhythms_1.csv\")\n\n# Extract the variables from the loaded data\ndata = np.array(df.iloc[:,0])  #Get the values associated with the first column of the dataframe\nt    = np.array(df.iloc[:,1])  #Get the values associated with the second column of the dataframe"}];
+globalThis.qpyodideCellDetails = [{"options":{"read-only":"false","out-height":"","autorun":"","warning":"true","fig-cap":"","fig-width":7,"classes":"","fig-height":5,"results":"markup","output":"true","message":"true","context":"interactive","label":"","dpi":72,"comment":"","out-width":"700px"},"id":1,"code":"# Load modules\nimport scipy.io as sio\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt"},{"options":{"read-only":"false","out-height":"","autorun":"","warning":"true","fig-cap":"","fig-width":7,"classes":"","fig-height":5,"results":"markup","output":"true","message":"true","context":"interactive","label":"","dpi":72,"comment":"","out-width":"700px"},"id":2,"code":"t = np.arange(0, 2, 0.001)"},{"options":{"read-only":"false","out-height":"","autorun":"","warning":"true","fig-cap":"","fig-width":7,"classes":"","fig-height":5,"results":"markup","output":"true","message":"true","context":"interactive","label":"","dpi":72,"comment":"","out-width":"700px"},"id":3,"code":"x = np.sin(2*np.pi*t)"},{"options":{"read-only":"false","out-height":"","autorun":"","warning":"true","fig-cap":"","fig-width":7,"classes":"","fig-height":5,"results":"markup","output":"true","message":"true","context":"interactive","label":"","dpi":72,"comment":"","out-width":"700px"},"id":4,"code":"f1 = 10;\nx1 = np.cos(2*np.pi*t*f1);\n\nf2 = 2;\nx2 = np.cos(2*np.pi*t*f2);"},{"options":{"read-only":"false","out-height":"","autorun":"","warning":"true","fig-cap":"","fig-width":7,"classes":"","fig-height":5,"results":"markup","output":"true","message":"true","context":"interactive","label":"","dpi":72,"comment":"","out-width":"700px"},"id":5,"code":"df = pd.read_csv(\"https://raw.githubusercontent.com/Mark-Kramer/BU-MA665-MA666/master/Data/Rhythms_1.csv\")\n\n# Extract the variables from the loaded data\ndata = np.array(df.iloc[:,0])  #Get the values associated with the first column of the dataframe\nt    = np.array(df.iloc[:,1])  #Get the values associated with the second column of the dataframe"}];
 
 
 </script>
@@ -423,40 +422,11 @@ globalThis._qpyodideGetInstance = function() {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">JHU EN.553.696</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./Rhythms_1.html" aria-current="page"> 
-<span class="menu-text">Rhythms Intro</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Analyzing_Rhythms_Lab_1.html"> 
-<span class="menu-text">Rhythms Practicals</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
