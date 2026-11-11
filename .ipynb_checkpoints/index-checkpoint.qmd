@@ -84,14 +84,12 @@ subtitle: "Methods in Computational Neuroscience"
 - Advanced Read: [Lepage et al, *The Dependence of Spike Field Coherence on Expected Intensity*, 2011.](/Readings/Lepage_Neural_Comp_2011.pdf) 
 - **Lecture 1** [PDF](Slides/Coherence_Lecture_1.pdf), [PPTX](Slides/Coherence_Lecture_1.pptx)
 - Lecture Code 1: [Coherence Lab 1](Coherence_Lab_Part_1.html)
-
-<!--
 - Lecture Code 2: [Coherence Lab 2](Coherence_Lab_Part_2.html)
 - **Lecture 2** [PDF](Slides/Coherence_Lecture_2.pdf), [PPTX](Slides/Coherence_Lecture_2.pptx)
 - Lecture Code 3: [Coherence Lab 3](Coherence_Lab_Part_3.html)
 - [**Coherence Challenges**](Slides/Coherence_Challenges.pdf)
 
-
+<!--
 ### Cross-frequency coupling
 - Read: [Chapter 7 @ Kramer & Eden, Case studies in neural data analysis, 2016.](/Readings/Kramer_Eden_Chapter_8.pdf)
 - Read: [Canolty et al., *High Gamma Power Is Phase-Locked to Theta Oscillations in Human Neocortex*, 2006](Readings/Canolty_2006.pdf)
