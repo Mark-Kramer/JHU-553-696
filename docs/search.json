@@ -119,6 +119,13 @@
     "text": "Compute the coherence\n\n# Fourier transforms.\nXf = \"SOMETHING\"  # Compute Fourier transform of x for each trial\nYf = \"SOMETHING\"  # Compute Fourier transform of y for each trial\n\n# Auto- and cross-spectra.\nSxx = \"SOMETHING\"  # Spectrum of x trials\nSyy = \"SOMETHING\"  # ... and y trials\nSxy = \"SOMETHING\"  # ... and the cross spectrum\n\n# Trial average.\nSxx = np.mean(Sxx,0)\nSyy = np.mean(Syy,0)\nSxy = np.mean(Sxy,0)\n\n# Calculate coherence.\ncohr = \"SOMETHING\"\n\nf = np.fft.fftfreq(N, dt)               # Define a frequency axis.\nplt.plot(f, cohr.real)                  # Plot the coherence.\nplt.ylim([0, 1.1])                      # ... with y-axis scaled,\nplt.xlabel('Frequency [Hz]')            # ... and with axes labeled.\nplt.ylabel('Coherence')\nplt.title('Trial averaged coherence between two electrodes');"
   },
   {
+    "objectID": "Aperiodic_Exponent_Lab.html",
+    "href": "Aperiodic_Exponent_Lab.html",
+    "title": "Aperiodic exponent example",
+    "section": "",
+    "text": "Let’s try this example code.\n\n# Import required code for visualizing example models\nfrom fooof import FOOOF\nfrom fooof.sim.gen import gen_power_spectrum\nfrom fooof.sim.utils import set_random_seed\nfrom fooof.plts.spectra import plot_spectra\nfrom fooof.plts.annotate import plot_annotated_model\n\n\n# Set random seed, for consistency generating simulated data\nset_random_seed(21)\n\n# Simulate example power spectra\nfreqs1, powers1 = gen_power_spectrum([3, 40], [1, 1],\n                                     [[10, 0.2, 1.25], [30, 0.15, 2]])\nfreqs2, powers2 = gen_power_spectrum([1, 150], [1, 125, 1.25],\n                                     [[8, 0.15, 1.], [30, 0.1, 2]])\n\n\n# Initialize power spectrum model objects and fit the power spectra\nfm1 = FOOOF(min_peak_height=0.05, verbose=False)\nfm2 = FOOOF(min_peak_height=0.05, aperiodic_mode='knee', verbose=False)\nfm1.fit(freqs1, powers1)\nfm2.fit(freqs2, powers2)\n\n\n# Plot one of the example power spectra\nplot_spectra(freqs1, powers1, log_powers=True,\n             color='black', label='Original Spectrum')\n\n\n# Plot an example power spectrum, with a model fit\nfm1.plot(plot_peaks='shade', peak_kwargs={'color' : 'green'})\n\n\n# Plot an annotated version of the power spectrum model\nplot_annotated_model(fm1, annotate_aperiodic=False)\n\n\n# Report: fit the model, print the resulting parameters, and plot the reconstruction\nfm1.report()"
+  },
+  {
     "objectID": "Analyzing_Rhythms_Lab_2b.html",
     "href": "Analyzing_Rhythms_Lab_2b.html",
     "title": "Analyzing Rhythms Part 2b (Autocovariance)",

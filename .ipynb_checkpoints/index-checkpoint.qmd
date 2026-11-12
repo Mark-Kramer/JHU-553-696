@@ -84,9 +84,9 @@ subtitle: "Methods in Computational Neuroscience"
 - Advanced Read: [Lepage et al, *The Dependence of Spike Field Coherence on Expected Intensity*, 2011.](/Readings/Lepage_Neural_Comp_2011.pdf) 
 - **Lecture 1** [PDF](Slides/Coherence_Lecture_1.pdf), [PPTX](Slides/Coherence_Lecture_1.pptx)
 - Lecture Code 1: [Coherence Lab 1](Coherence_Lab_Part_1.html)
-- Lecture Code 2: [Coherence Lab 2](Coherence_Lab_Part_2.html)
+- Lecture Code 2: [Coherence Lab 2](Coherence_Lab_Part_2.html), [**In Class Code**](Slides/Coherence_Lab_Notes.pdf)
 - **Lecture 2** [PDF](Slides/Coherence_Lecture_2.pdf), [PPTX](Slides/Coherence_Lecture_2.pptx)
-- Lecture Code 3: [Coherence Lab 3](Coherence_Lab_Part_3.html)
+- Lecture Code 3: [Coherence Lab 3](Coherence_Lab_Part_3.html), [**In Class Code**](Slides/Spike_Field_Coherence_Lab_Notes.pdf)
 - [**Coherence Challenges**](Slides/Coherence_Challenges.pdf)
 
 # Cross-frequency coupling
@@ -97,6 +97,13 @@ subtitle: "Methods in Computational Neuroscience"
 - **Lecture** [Slides](Slides/CFC_Lecture.pdf)
 - Lecture Code: [Cross-frequency Coupling Lab](CFC_Lab.html)
 - [**CFC Challenges**](Slides/CFC_Challenges.pdf)
+
+# Aperiodic exponent
+- Read: [Donoghue et al., *Parameterizing neural power spectra...*, 2020](/Readings/Donoghue_2020.pdf)
+- Extra Read: [Gao et al., *Inferring synaptic excitation/inhibition balance...*, 2017](/Readings/Gao_2017.pdf)
+- Extra Read: [Kramer & Chu, *A General, Noise-Driven Mechanism...*, 2024](/Readings/Kramer_2024.pdf)
+- **Lecture** [Slides](Slides/Aperiodic_Exponent_Lecture.pdf)
+- Lecture Code: [Aperiodic Exponent Lab](Aperiodic_Exponent_Lab.html)
 
 <!--
 -->
