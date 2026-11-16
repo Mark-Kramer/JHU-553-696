@@ -184,11 +184,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div id="cell-4" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the data.</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> loadmat(<span class="st">'Data/LFP-1.mat'</span>)      <span class="co"># Load the data,</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>t    <span class="op">=</span> data[<span class="st">'t'</span>][<span class="dv">0</span>]                   <span class="co"># ... extract t, the time variable,</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>LFP  <span class="op">=</span> data[<span class="st">'LFP'</span>][<span class="dv">0</span>]                 <span class="co"># ... and LFP, the voltage variable.</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>dt   <span class="op">=</span> t[<span class="dv">1</span>] <span class="op">-</span> t[<span class="dv">0</span>]                    <span class="co"># Define the sampling interval,</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>fNQ  <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> dt <span class="op">/</span> <span class="dv">2</span>                     <span class="co"># ... and Nyquist frequency. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   Data available here</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   https://github.com/Mark-Kramer/JHU-553-696/tree/main/Data</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> loadmat(<span class="st">'LFP-1.mat'</span>)      <span class="co"># Load the data,</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>t    <span class="op">=</span> data[<span class="st">'t'</span>][<span class="dv">0</span>]                   <span class="co"># ... extract t, the time variable,</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>LFP  <span class="op">=</span> data[<span class="st">'LFP'</span>][<span class="dv">0</span>]                 <span class="co"># ... and LFP, the voltage variable.</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>dt   <span class="op">=</span> t[<span class="dv">1</span>] <span class="op">-</span> t[<span class="dv">0</span>]                    <span class="co"># Define the sampling interval,</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>fNQ  <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> dt <span class="op">/</span> <span class="dv">2</span>                     <span class="co"># ... and Nyquist frequency. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="cell-5" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.plot(t,LFP)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
