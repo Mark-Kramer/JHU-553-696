@@ -89,6 +89,8 @@ subtitle: "Methods in Computational Neuroscience"
 - Lecture Code 3: [Coherence Lab 3](Coherence_Lab_Part_3.html), [**In Class Code**](Slides/Spike_Field_Coherence_Lab_Notes.pdf)
 - [**Coherence Challenges**](Slides/Coherence_Challenges.pdf)
 
+**Prof. Eden Lecture [Slides](Slides/Prof_Eden_Lecture.pdf)**
+
 # Cross-frequency coupling
 - Read: [Chapter 7 @ Kramer & Eden, Case studies in neural data analysis, 2016.](/Readings/Kramer_Eden_Chapter_8.pdf)
 - Read: [Canolty et al., *High Gamma Power Is Phase-Locked to Theta Oscillations in Human Neocortex*, 2006](Readings/Canolty_2006.pdf)
